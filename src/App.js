@@ -6,7 +6,7 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<p>
-					Here's where I start: <code>src/App.js</code>.
+					Here's where I start: <code>src/App.js</code> and i'm just playing with it for now.
 				</p>
 			</header>
 		</div>
