@@ -23,14 +23,19 @@
 }
 
 article {
-	border: 1px solid white;
-	margin: 1rem;
+	/* border: 1px solid white; */
+	/* margin: 1rem; */
+	/* padding: 0.5rem; */
 }
 
 section p {
 	background-color: #006980;
 	padding: .5rem;
-	margin: 1rem;
+	margin: 0.2rem;
+}
+
+.picture{
+	max-width: 100%;
 }
 
 /* style outline from Jonathon */

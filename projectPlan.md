@@ -11,6 +11,7 @@ Slight animations or indicators to note section/scroll progress.
 -   terms/words to highlight interests
 
 2. Work (Order is not set yet)
+* TO DO NEXT: min-width to start an alternating left/right alignment for the image and little text blurb
 
 -   Whack-a-mole (Solo – JS game)
     -   Insert code snippets (GitHub Gist) when relevant

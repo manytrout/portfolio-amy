@@ -7,10 +7,22 @@ function Projects(props) {
 				<Tile projectName="capstone" />
 				this is my capstone blurb
 			</article>
-			<Tile projectName="portfolio" />
-			<Tile projectName="calculator" />
-			<Tile projectName="game" />
-			<Tile projectName="movie app" />
+			<article>
+				<Tile projectName="portfolio" />
+				and this is my portfolio blurb
+			</article>
+			<article>
+				<Tile projectName="calculator" />
+				my little calculator blurb
+			</article>
+			<article>
+				<Tile projectName="game" />
+				my whack a mole game lol
+			</article>
+			<article>
+				<Tile projectName="movie app" />
+				and the movie app!
+			</article>
 		</section>
 	);
 }
