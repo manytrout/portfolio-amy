@@ -1,11 +1,16 @@
 import Tile from "./Tile";
+import CallToAction from "./CallToAction";
+
 function Projects(props) {
 	return (
+		// should I make a component that combines both tile and CTA and call it here?
 		<section className="projectsSection">
-			<p>here's some stuff about projects</p>
+			<h2>My projects</h2>
+			<p>here's some project examples.</p>
 			<article>
 				<Tile projectName="capstone" />
-				this is my capstone blurb
+				<CallToAction buttonText="capstone details" />
+				{/* link to capstone details page */}
 			</article>
 			<article>
 				<Tile projectName="portfolio" />

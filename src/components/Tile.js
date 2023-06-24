@@ -8,8 +8,9 @@ function Tile(props) {
 			<img className="picture" src={picture} alt="some flowers" />
 			<p className="singleTile">
 				This component <code> (Tile.js) </code>should be a cover image.
-				It could have a link to a page with more details about the
-				project if that makes sense.
+				{/* It could have (or be) a link to a page with more details about the
+				project if that makes sense. 
+				To indicate that it's clickable it could also surge on mobile (how?)/ have a tracer around it on hover... */}
 			</p>
 		</div>
 	);
