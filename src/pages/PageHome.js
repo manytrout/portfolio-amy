@@ -3,7 +3,7 @@ import Projects from "../components/Projects";
 
 function PageHome() {
 	return (
-		<main>
+		<main id="main-id">
 			<p>Home page content goes here</p>
 			<Projects />
 			<Fun />

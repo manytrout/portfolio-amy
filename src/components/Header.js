@@ -1,9 +1,11 @@
-
-import { NavLink } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 function Header(props) {
 	return (
 		<header>
+			<a className="skip-link" href="#main-id">
+				Skip Navigation Links
+			</a>
 			<h1>{props.title}</h1>
 			<nav className="site-navigation" id="site-navigation">
 				<ul className="nav-list" id="nav-list">
@@ -15,7 +17,6 @@ function Header(props) {
 					</li>
 				</ul>
 			</nav>
-
 		</header>
 	);
 }
