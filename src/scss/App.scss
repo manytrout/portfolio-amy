@@ -1,3 +1,17 @@
+body {
+	margin: 0;
+	font-family: "Maven Pro", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: "Courier Prime", "Courier New", monospace;
+	border: 1px solid transparent;
+   border-radius: 3px;
+	background-color: rgb(160, 160, 160);
+}
 .App {
 	text-align: center;
 	background-color: #102141;
@@ -43,15 +57,33 @@ section p {
 
 .buttonContainer {
 	padding: 1rem;
+	.ctaButton {
+		font-size: 1.5rem;
+		padding: 0.3rem 1rem;
+		border: 5px solid rgb(254, 216, 222);
+		background-color: rgb(73, 84, 81);
+		color: white;
+		/* border: none; */
+		/* box-shadow: 3px 3px pink; */
+	}
 }
-.ctaButton {
-	font-size: 2em;
-	padding: 0.3em 1em;
-	border: 5px solid rgb(254, 216, 222);
-	background-color: rgb(73, 84, 81);
-	color: white;
-	/* border: none; */
-	/* box-shadow: 3px 3px pink; */
+
+nav {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		display: block;
+		padding: 6px 12px;
+		text-decoration: none;
+	}
 }
 
 /* style outline from Jonathon */
