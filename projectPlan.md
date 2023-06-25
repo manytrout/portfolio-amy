@@ -13,7 +13,7 @@ Slight animations or indicators to note section/scroll progress.
 -   Nice to have:
     -   Add a counter to a click-me button to show "I have been clicked this many times"
         -   would require a db and api
-    -   some weather API integration
+    -   weather API integration 
 
 ---
 
