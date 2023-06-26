@@ -7,27 +7,29 @@ function Projects(props) {
 		<section className="projectsSection">
 			<h2>My projects</h2>
 			<p>here's some project examples.</p>
-			<article>
+			<ul className="project-grid">
+			<li>
 				<Tile projectName="capstone" />
 				<CallToAction buttonText="capstone details" />
-				{/* link to capstone details page */}
-			</article>
-			<article>
+{/* link to capstone details page */}
+			</li>
+			<li>
 				<Tile projectName="portfolio" />
 				and this is my portfolio blurb
-			</article>
-			<article>
+			</li>
+			<li>
 				<Tile projectName="calculator" />
 				my little calculator blurb
-			</article>
-			<article>
+			</li>
+			<li>
 				<Tile projectName="game" />
 				my whack a mole game lol
-			</article>
-			<article>
+			</li>
+			<li>
 				<Tile projectName="movie app" />
 				and the movie app!
-			</article>
+			</li>
+			</ul>
 		</section>
 	);
 }

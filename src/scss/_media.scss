@@ -1,0 +1,28 @@
+// Helpful overview of media queries and sass https://medium.com/geekculture/sass-media-queries-mixins-1c5e5f605704
+$breakpoint-small: 600px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+$breakpoint-extra-large: 1300px;
+
+@mixin min-width($breakpoint) {
+  @if ($breakpoint == small){
+    @media (min-width: $breakpoint-small){
+      @content;
+    }
+  }
+    @else if ($breakpoint == medium) {
+      @media (min-width: $breakpoint-medium) {
+        @content;
+      }
+    } @else if ($breakpoint == large) {
+      @media (min-width: $breakpoint-large) {
+        @content;
+      }
+    } @else if ($breakpoint == xlarge) {
+      @media (min-width: $breakpoint-extra-large) {
+        @content;
+      }
+    } @else {
+      @error "UNKNOWN MEDIA BREAKPOINT #{$breakpoint}";
+    }
+  }
