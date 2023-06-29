@@ -1,4 +1,4 @@
-import Tile from "./Tile";
+import Tiles from "./Tiles";
 import CallToAction from "./CallToAction";
 
 function Projects(props) {
@@ -7,29 +7,29 @@ function Projects(props) {
 		<section className="projectsSection">
 			<h2>My projects</h2>
 			<p>here's some project examples.</p>
-			<ul className="project-grid">
-			<li>
-				<Tile projectName="capstone" />
-				<CallToAction buttonText="capstone details" />
-{/* link to capstone details page */}
-			</li>
-			<li>
-				<Tile projectName="portfolio" />
-				and this is my portfolio blurb
-			</li>
-			<li>
-				<Tile projectName="calculator" />
-				my little calculator blurb
-			</li>
-			<li>
-				<Tile projectName="game" />
-				my whack a mole game lol
-			</li>
-			<li>
-				<Tile projectName="movie app" />
-				and the movie app!
-			</li>
-			</ul>
+			<Tiles />
+			{/* <ul className="project-grid">
+				<li>
+					<Tiles projectName="capstone" />
+					<CallToAction buttonText="capstone details" />
+				</li>
+				<li>
+					<Tiles projectName="portfolio" />
+					and this is my portfolio blurb
+				</li>
+				<li>
+					<Tiles projectName="calculator" />
+					my little calculator blurb
+				</li>
+				<li>
+					<Tiles projectName="game" />
+					my whack a mole game lol
+				</li>
+				<li>
+					<Tiles projectName="movie app" />
+					and the movie app!
+				</li>
+			</ul> */}
 		</section>
 	);
 }
