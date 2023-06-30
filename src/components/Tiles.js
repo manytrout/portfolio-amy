@@ -1,4 +1,4 @@
-import getPosts from "../data/coolDatabase";
+import getPosts from "../data/projectData";
 import Tile from "./Tile";
 
 function Tiles() {
@@ -12,6 +12,8 @@ function Tiles() {
 						title={singleProject.title}
 						body={singleProject.body}
 						projectType={singleProject.projectType}
+						titleImage={singleProject.titleImage}
+						titleImageAltText={singleProject.titleImageAltText}
 					/>
 				);
 			})}
