@@ -7,7 +7,6 @@ function PageHome() {
 			<p>Home page content goes here.</p>
 			<div className="portfolio-content">
 				<Projects />
-				{/* <Fun /> */}
 			</div>
 		</main>
 	);
