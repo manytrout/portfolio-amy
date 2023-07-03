@@ -3,7 +3,6 @@ import Tile from "../components/Tile";
 
 function CallToAction(props, handleClick) {
 	function handleClick() {
-		let props;
 		let message = "click handled";
 		console.log(message);
 		// click working but not doing anything yet. I want it to link to the given project page so add that to my ToDo

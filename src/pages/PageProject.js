@@ -1,4 +1,4 @@
-// use project title as end of URL (i think)
+// use project title (OR SLUG) as end of URL (i think)
 // this needs:
 /* 
 feature image
@@ -14,9 +14,6 @@ brief description
 
 /*
 get to this page either directly  by URL 
-
 OR
-
-clicking on a tile (Project or Fun for now)
-
+clicking on a tile
 */
