@@ -14,20 +14,21 @@ function App() {
 		<div className="App">
 			<BrowserRouter path="/">
 				<Header title="Amy Turton" />
-				<MainNav />
+
 				<Routes>
 					<Route path="/" element={<PageHome />} />
 					<Route path="/about" element={<PageAbout />} />
 					<Route path="/projects" element={<PageProjects />} />
 				</Routes>
+
 				<Footer
-				// does the footer go inside or outside BrowserRouter?
-				
+					// does the footer go inside or outside BrowserRouter?
+
 					myName="Amy Turton"
 					email="real@email.com"
 					details="some stuff"
 				/>
-				
+				<MainNav />
 			</BrowserRouter>
 
 			{/* <PageHome /> */}

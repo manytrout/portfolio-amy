@@ -63,7 +63,7 @@ const projectDescriptions = [
 		// toolsUsed: "",
 		workProcess: [
 			{
-				planning: "Working in a group of four to meet several business requirements and deliver a nice-looking site required a lot of planning. We had  ",
+				planning: "Working in a group of four to deliver several business requirements needed a lot of planning before we started working on anything remotely technical. Our first meeting happened before the project officially started, that's when agreed on some basics about how we'd keep one another on track. Once we started officially, we started using a shared Google Drive to collaborate on documents, share resources, and store assets. Next up we chose a communication platform -- we thought that Discord would be best since it's flexible and there is no license expiry to worry about. We used Figma to design the Information Architecture and Invision to do up some detailed wireframes; they're both so easy to use when collaborating remotely. We also used GitHub and an FTP client to share our code",
 				working: "",
 				moreDetails: "",
 			},
