@@ -8,12 +8,13 @@ function Tiles() {
 				return (
 					<Tile
 						key={i}
-						slug={singleProject.slug}
-						title={singleProject.title}
-						body={singleProject.body}
-						projectType={singleProject.projectType}
-						titleImage={singleProject.titleImage}
-						titleImageAltText={singleProject.titleImageAltText}
+						{...singleProject}
+						// slug={singleProject.slug}
+						// title={singleProject.title}
+						// body={singleProject.body}
+						// projectType={singleProject.projectType}
+						// titleImage={singleProject.titleImage}
+						// titleImageAltText={singleProject.titleImageAltText}
 					/>
 				);
 			})}
