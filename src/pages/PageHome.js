@@ -1,12 +1,12 @@
 import Fun from "../components/Fun";
-import Projects from "../components/Projects";
+import ProjectSummary from "../components/ProjectSummary";
 
 function PageHome() {
 	return (
 		<main id="main-id">
 			<p>Home page content goes here.</p>
 			<div className="portfolio-content">
-				<Projects />
+				<ProjectSummary />
 			</div>
 		</main>
 	);
