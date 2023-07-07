@@ -1,13 +1,15 @@
-import Fun from "../components/Fun";
-import ProjectSummary from "../components/ProjectSummary";
+import Tiles from "../components/Tiles";
 
 function PageHome() {
 	return (
 		<main id="main-id">
-			<p>Home page content goes here.</p>
-			<div className="portfolio-content">
-				<ProjectSummary />
-			</div>
+			{/* what if i made sections based on project type */}
+			<section className="projectsSection">
+				<h2>My projects</h2>
+				<p>here's some project examples.</p>
+
+				<Tiles />
+			</section>
 		</main>
 	);
 }
