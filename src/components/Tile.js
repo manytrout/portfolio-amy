@@ -18,7 +18,7 @@ Consider: https://css-tricks.com/breakout-buttons/
 				src={titleImage}
 				alt={titleImageAltText}
 			/>
-			<CallToAction buttonText={title} />
+			<CallToAction hardText="more about" variableText={title} />
 		</div>
 	);
 }

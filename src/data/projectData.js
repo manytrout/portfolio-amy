@@ -4,7 +4,7 @@ import projectPicture02 from "../images/movie-app/movie-app.png";
 import funPicture02 from "../images/calculator/calculator.png";
 
 // this whole file is a sort of a template to help me make a fake 'database'
-function getPost(slug) {
+export function getPost(slug) {
 	// Replace this with a database lookup one day
 	for (const post of getPosts()) {
 		if (post.slug === slug) {
@@ -111,14 +111,14 @@ const posts = [
 	{
 		slug: "calculator",
 		projectType: "fun",
-		title: "ReactCalculator",
+		title: "React Calculator",
 		body: (
 			<div className="summary">
 				<p>
 					Calculator made in React, including memory buttons, square
 					root, and other functions. Strictly speaking, this was a
 					small assignment buuuuttt it was a lot of fun and it's when
-					React started to click for me. learned a lot.
+					React started to click for me.
 				</p>
 			</div>
 		),

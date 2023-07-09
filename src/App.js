@@ -21,8 +21,9 @@ function App() {
 				<Routes>
 					<Route path="/" element={<PageHome />} />
 					<Route path="/about" element={<PageAbout />} />
-					<Route path="/projects" element={<PageProjects />} />
-					<Route path="/:slug" element={<Project />} />
+					{/* <Route path="/projects" element={<PageProjects />} /> */}
+					{/* Leaving the projects route here incase I decide I want it later. It's a candidate for full removal though. */}
+					<Route path="/:slug" element={<PageProject />} />
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
 
