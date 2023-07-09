@@ -3,7 +3,7 @@ import projectPicture01 from "../images/game/buzz-off-01-square.png";
 import projectPicture02 from "../images/movie-app/movie-app.png";
 import funPicture02 from "../images/calculator/calculator.png";
 
-// this whole file is a sort of a template to help me with how to make a 'database'
+// this whole file is a sort of a template to help me make a fake 'database'
 function getPost(slug) {
 	// Replace this with a database lookup one day
 	for (const post of getPosts()) {
@@ -14,7 +14,6 @@ function getPost(slug) {
 }
 
 function getPosts() {
-	// console.log(posts);
 	return posts;
 }
 
@@ -23,7 +22,6 @@ const posts = [
 		slug: "buzz-off",
 		projectType: "assignment",
 		title: "Buzz Off!",
-		//body: "Vanilla JS game some text",
 		body: (
 			<div className="summary">
 				<div>
@@ -119,28 +117,100 @@ const posts = [
 				<p>
 					Calculator made in React, including memory buttons, square
 					root, and other functions. Strictly speaking, this was a
-					small assignment buuuuttt it was probably the most fun
-					little assignment I had throughtout the program and I
-					learned a lot.
+					small assignment buuuuttt it was a lot of fun and it's when
+					React started to click for me. learned a lot.
+				</p>
+			</div>
+		),
+		details: (
+			<div className="details">
+				<p className="planning">
+					After making a display I started with the basic
+					functionality: 0-9, arithmetic, equals, C and AC. My plan
+					was to start on the memory functionality next but once I
+					remembered the Math object in JavaScript I got some of that
+					done first since it's got so much in common with the
+					arithmetic functions. Once that was done I moved on to the
+					memory keys and making the display work better.
+				</p>
+				<p className="working">
+					As usual, I relied a lot the React dev tools -- soooo much
+					console.log -- to help me test along the way
+				</p>
+				<p className="challenges">
+					This isn't a technical challenge per-se, but it turns out
+					that I'm not the only one in my class who had no idea what
+					MS, MR, and MC on calculators stood for. It was cool to
+					finally learn what it meant at the same time as I
+					implemented that functionality! :D
 				</p>
 			</div>
 		),
 		titleImage: funPicture02,
 		titleImageAltText: "A screenshot of my calculator app",
 	},
+	{
+		slug: "capstone",
+		projectType: "assignment",
+		title: "Amazilia Acrescapers",
+		body: (
+			<div className="summary">
+				<p>
+					A wordpres-driven website for Amazalia Acrescapers, a
+					landscaping and garden maintenance company providing
+					services on Hawai'i (aka The Big Island).
+				</p>
+			</div>
+		),
+		details: (
+			<div className="details">
+				<p className="planning">
+					break this up into stages? Working in a group of four to
+					deliver several business requirements needed a lot of
+					planning before we started working on anything remotely
+					technical. Our first meeting happened before the project
+					officially started, that's when agreed on some basics about
+					how we'd keep one another on track. Once we started
+					officially, we started using a shared Google Drive to
+					collaborate on documents, share resources, and store assets.
+					Next up we chose a communication platform -- we thought that
+					Discord would be best since it's flexible and there is no
+					license expiry to worry about. We used Figma to design the
+					Information Architecture and Invision to do up some detailed
+					wireframes; they're both so easy to use when collaborating
+					remotely. We also used GitHub and an FTP client to share our
+					code.
+				</p>
+				<p className="working">
+					{" "}
+					break this up into stages: WP plugins, Templates and
+					verification of templates, test content, adding JS
+					functionality to the gallery page, styling, etc.{" "}
+				</p>
+				<p className="challenges"></p>
+			</div>
+		),
+		titleImage: projectPicture,
+		titleImageAltText: "flowersssss",
+	},
+	//
+	// TEMPLATE for projectData record
 	// {
-	// 	slug: "",
-	// 	projectType: "",
-	// 	title: "",
+	// 	slug: "capstone",
+	// 	projectType: "assignment",
+	// 	title: "Amazilia Acrescapers",
 	// 	body: (
-	// 	<div>
-	// 	</div>
-	// ),
-	// details: (
-	// 		<div className="details">
-	// 		<p className="planning"></p>
+	// 		<div className="summary">
+	// 			<p></p>
 	// 		</div>
-	// 		),
+	// 	),
+	// 	details: (
+	// 		<div className="details">
+	// 			<p className="planning"></p>
+	// 			<p className="working"></p>
+	// 			<p className="challenges"></p>
+	// 		</div>
+	// 	),
 	// 	titleImage: projectPicture,
 	// 	titleImageAltText: "",
 	// },

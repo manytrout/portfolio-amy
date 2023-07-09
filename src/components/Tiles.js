@@ -6,10 +6,10 @@ function Tiles() {
 	let posts = getPosts();
 
 	let assignments = posts.filter((post) => {
-		return post.projectType == "assignment";
+		return post.projectType === "assignment";
 	}); 
 	let fun = posts.filter((post) => {
-		return post.projectType == "fun";
+		return post.projectType === "fun";
 	}); 
 	return (
 		<div className="projects-container">

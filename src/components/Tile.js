@@ -10,7 +10,7 @@ function Tile({slug, title, body, projectType, titleImage, titleImageAltText}) {
 Consider: https://css-tricks.com/breakout-buttons/
 
 				To indicate that it's clickable it could also surge on mobile (how?)/ have a tracer around it on hover... */}
-				
+
 			<h2 className="projectTitle">{title}</h2>
 			<div className="projectBody">{body}</div>
 			<img
@@ -21,7 +21,6 @@ Consider: https://css-tricks.com/breakout-buttons/
 			<CallToAction buttonText={title} />
 		</div>
 	);
-	
 }
 
 export default Tile;

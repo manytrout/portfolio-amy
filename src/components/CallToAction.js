@@ -1,17 +1,19 @@
-import {useState} from "react";
-import Tile from "../components/Tile";
+// import {useState} from "react";
+// import Tile from "../components/Tile";
+// import PageProject from "../pages/PageProject";
+// import {Link, Navigate, useParams} from "react-router-dom";
 
-function CallToAction(props, handleClick) {
+import PageProject from "../pages/PageProject";
+
+function CallToAction(props) {
 	function handleClick() {
 		let message = "click handled";
 		console.log(message);
-		// click working but not doing anything yet. I want it to link to the given project page so add that to my ToDo
+		<PageProject />
 	}
 	return (
 		<div className="buttonContainer">
 			<button typeof="button" className="ctaButton" onClick={handleClick}>
-				{/* {props.buttonText} */}
-				{/* {props.Tile} */}
 				more about {props.buttonText}
 			</button>
 		</div>

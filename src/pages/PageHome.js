@@ -2,7 +2,7 @@ import Tiles from "../components/Tiles";
 
 function PageHome() {
 	return (
-		<main id="main-id">
+		<main id="home-main main-id">
 			{/* what if i made sections based on project type */}
 			<section className="projectsSection">
 				<h2>My projects</h2>

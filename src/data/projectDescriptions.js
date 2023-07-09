@@ -22,25 +22,25 @@ const projectDescriptions = [
 	// 		"I was really shaky with the concept of 'this' in JavaScript, but to have game that worked the way that I'd envisioned I had to push through with it. Another thing that I wanted to implement in this game was a class, which I did! And even though I didn't do much with the class itself, I learned a lot.",
 	// 	codeExamples: "",
 	// },
-	{
-		slug: "calculator",
-		title: "React Calculator",
-		description:
-			"This is technically an assignment but it was the first React app I made and I had a lot of fun writing it.",
-		// toolsUsed: "", // needed? how tf do i talk about this? I should have a section in About Me instead
-		workProcess: [
-			{
-				planning:
-					"After making a display I started with the basic functionality: 0-9, arithmetic, equals, C and AC. My plan was to start on the memory functionality next but once I remembered the Math object in JavaScript I got some of that done first since it's got so much in common with the arithmetic functions. Once that was done I moved on to the memory keys and making the display work better.",
-				working:
-					"As usual, I relied a lot the React dev tools -- soooo much console.log -- to help me test along the way.",
-				moreDetails:
-					"It turns out that I'm not the only one in my class who had no idea what the MS, MR, and MC on calculators stood for. It was cool to finally learn what it meant at the same time as I implemented that functionality! :D",
-			},
-		],
-		challenges: "",
-		codeExamples: "",
-	},
+	// {
+	// 	slug: "calculator",
+	// 	title: "React Calculator",
+	// 	description:
+	// 		"This is technically an assignment but it was the first React app I made and I had a lot of fun writing it.",
+	// 	// toolsUsed: "", // needed? how tf do i talk about this? I should have a section in About Me instead
+	// 	workProcess: [
+	// 		{
+	// 			planning:
+	// 				"After making a display I started with the basic functionality: 0-9, arithmetic, equals, C and AC. My plan was to start on the memory functionality next but once I remembered the Math object in JavaScript I got some of that done first since it's got so much in common with the arithmetic functions. Once that was done I moved on to the memory keys and making the display work better.",
+	// 			working:
+	// 				"As usual, I relied a lot the React dev tools -- soooo much console.log -- to help me test along the way.",
+	// 			moreDetails:
+	// 				"It turns out that I'm not the only one in my class who had no idea what the MS, MR, and MC on calculators stood for. It was cool to finally learn what it meant at the same time as I implemented that functionality! :D",
+	// 		},
+	// 	],
+	// 	challenges: "",
+	// 	codeExamples: "",
+	// },
 	// {
 	// 	slug: "movie-app",
 	// 	title: "Movie Love",
@@ -56,33 +56,54 @@ const projectDescriptions = [
 	// 	challenges: "",
 	// 	codeExamples: "",
 	// },
-	{
-		slug: "capstone",
-		title: "Amazilia Acrescapers",
-        description: "A wordpres-driven website for Amazalia Acrescapers, a landscaping and garden maintenance company providing services on Hawai'i (aka The Big Island).",
-		// toolsUsed: "",
-		workProcess: [
-			{
-				planning: "Working in a group of four to deliver several business requirements needed a lot of planning before we started working on anything remotely technical. Our first meeting happened before the project officially started, that's when agreed on some basics about how we'd keep one another on track. Once we started officially, we started using a shared Google Drive to collaborate on documents, share resources, and store assets. Next up we chose a communication platform -- we thought that Discord would be best since it's flexible and there is no license expiry to worry about. We used Figma to design the Information Architecture and Invision to do up some detailed wireframes; they're both so easy to use when collaborating remotely. We also used GitHub and an FTP client to share our code",
-				working: "",
-				moreDetails: "",
-			},
-		],
-		challenges: "",
-		codeExamples: "",
-	},
-	{
-		slug: "",
-		description: "",
-		toolsUsed: "",
-		workProcess: [
-			{
-				planning: "",
-				working: "",
-				moreDetails: "",
-			},
-		],
-		challenges: "",
-		codeExamples: "",
-	},
+	// {
+	// 	slug: "capstone",
+	// 	title: "Amazilia Acrescapers",
+	//     description: "A wordpres-driven website for Amazalia Acrescapers, a landscaping and garden maintenance company providing services on Hawai'i (aka The Big Island).",
+	// 	// toolsUsed: "",
+	// 	workProcess: [
+	// 		{
+	// 			// planning: "Working in a group of four to deliver several business requirements needed a lot of planning before we started working on anything remotely technical. Our first meeting happened before the project officially started, that's when agreed on some basics about how we'd keep one another on track. Once we started officially, we started using a shared Google Drive to collaborate on documents, share resources, and store assets. Next up we chose a communication platform -- we thought that Discord would be best since it's flexible and there is no license expiry to worry about. We used Figma to design the Information Architecture and Invision to do up some detailed wireframes; they're both so easy to use when collaborating remotely. We also used GitHub and an FTP client to share our code",
+	// 			working: "",
+	// 			moreDetails: "",
+	// 		},
+	// 	],
+	// 	challenges: "",
+	// 	codeExamples: "",
+	// },
+	// {
+	// 	slug: "",
+	// 	description: "",
+	// 	toolsUsed: "",
+	// 	workProcess: [
+	// 		{
+	// 			planning: "",
+	// 			working: "",
+	// 			moreDetails: "",
+	// 		},
+	// 	],
+	// 	challenges: "",
+	// 	codeExamples: "",
+	// },
+	//
+	// TEMPLATE for projectData.js record
+	// {
+	// 	slug: "capstone",
+	// 	projectType: "assignment",
+	// 	title: "Amazilia Acrescapers",
+	// 	body: (
+	// 		<div className="summary">
+	// 			<p></p>
+	// 		</div>
+	// 	),
+	// 	details: (
+	// 		<div className="details">
+	// 			<p className="planning"></p>
+	// 			<p className="working"></p>
+	// 			<p className="challenges"></p>
+	// 		</div>
+	// 	),
+	// 	titleImage: projectPicture,
+	// 	titleImageAltText: "",
+	// },
 ];

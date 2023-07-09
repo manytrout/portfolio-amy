@@ -1,3 +1,26 @@
+import { useEffect } from "react";
+import {Link, Navigate, useParams} from 'react-router-dom';
+
+
+
+function PageProject(){
+    // let { slug } = useParams;
+
+    // // useEffect(() =>{
+    // //     document.title = `${slug}`
+    // // },[slug])
+    // console.log({slug})
+
+    return (
+		<main className="single-project-page-container">
+            <p>put actual content here for a given project</p>
+		</main>
+	);
+
+}
+export default PageProject;
+
+
 // use project title (OR SLUG) as end of URL (i think)
 // this needs:
 /* 

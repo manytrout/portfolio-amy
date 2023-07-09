@@ -6,8 +6,11 @@ import Header from "./components/Header";
 import PageHome from "./pages/PageHome";
 import PageAbout from "./pages/PageAbout";
 import Footer from "./components/Footer";
+import Project from "./components/Project";
 import PageProjects from "./pages/PageProjects";
 import MainNav from "./components/MainNav";
+import PageProject from "./pages/PageProject";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
 	return (
@@ -19,6 +22,8 @@ function App() {
 					<Route path="/" element={<PageHome />} />
 					<Route path="/about" element={<PageAbout />} />
 					<Route path="/projects" element={<PageProjects />} />
+					<Route path="/:slug" element={<Project />} />
+					<Route path="*" element={<PageNotFound />} />
 				</Routes>
 
 				<Footer
