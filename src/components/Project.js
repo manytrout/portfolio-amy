@@ -1,3 +1,4 @@
+import PageHome from "../pages/PageHome";
 import CallToAction from "./CallToAction";
 
 function Project({
@@ -17,8 +18,8 @@ function Project({
 				src={titleImage}
 				alt={titleImageAltText}
 			/>
-
-			<CallToAction hardText="shrimp" variableText={title} />
+			{/* TO DO: fix slug so it doesn't bring me to the bottom of the home page */}
+			<CallToAction slug="/" hardText="more info about " variableText={title} />
 		</div>
 	);
 }

@@ -6,8 +6,6 @@ import Header from "./components/Header";
 import PageHome from "./pages/PageHome";
 import PageAbout from "./pages/PageAbout";
 import Footer from "./components/Footer";
-import Project from "./components/Project";
-import PageProjects from "./pages/PageProjects";
 import MainNav from "./components/MainNav";
 import PageProject from "./pages/PageProject";
 import PageNotFound from "./pages/PageNotFound";
