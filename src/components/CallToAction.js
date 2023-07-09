@@ -3,8 +3,6 @@ import Tile from "../components/Tile";
 import PageProject from "../pages/PageProject";
 import {Link, Navigate, useParams} from "react-router-dom";
 
-import PageProject from "../pages/PageProject";
-
 function CallToAction(props) {
 	function handleClick() {
 		let message = "click handled";
