@@ -2,7 +2,7 @@ import CallToAction from "./CallToAction";
 
 function Tile({slug, title, body, projectType, titleImage, titleImageAltText}) {
 	return (
-		<div className={`singleTile project-grid ${slug} ${projectType}`}>
+		<div className={`accordion-content singleTile project-grid ${slug} ${projectType}`}>
 			{/* TO DO: Replace class: project-grid with something that makes more sense
 			
 				It sould have (or be) a link to a page with more details about the

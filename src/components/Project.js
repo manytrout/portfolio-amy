@@ -22,7 +22,8 @@ function Project({
 				src={titleImage}
 				alt={titleImageAltText}
 			/>
-			<img
+			{/* TO DO: add the commented out extra images to somewhere specific maybe*/}
+			{/* <img
 				className="projectPicture projectDetail01"
 				src={detailImage01}
 				alt={detailImage01AltText}
@@ -31,7 +32,7 @@ function Project({
 				className="projectPicture projectDetail02"
 				src={detailImage02}
 				alt={detailImage02AltText}
-			/>
+			/> */}
 
 			{/* TO DO: fix slug so it doesn't bring me to the bottom of the home page */}
 			<CallToAction
