@@ -24,18 +24,14 @@ function App() {
 					<Route path="/:slug" element={<PageProject />} />
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
-
+				
 				<Footer
-					// does the footer go inside or outside BrowserRouter?
-
 					myName="Amy Turton"
 					email="real@email.com"
 					details="some stuff"
 				/>
 				<MainNav />
 			</BrowserRouter>
-
-			{/* <PageHome /> */}
 		</div>
 	);
 }

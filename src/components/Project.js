@@ -8,6 +8,10 @@ function Project({
 	projectType,
 	titleImage,
 	titleImageAltText,
+	detailImage01,
+	detailImage01AltText,
+	detailImage02,
+	detailImage02AltText,
 }) {
 	return (
 		<div className={`singleproject ${slug} ${projectType}`}>
@@ -18,8 +22,23 @@ function Project({
 				src={titleImage}
 				alt={titleImageAltText}
 			/>
+			<img
+				className="projectPicture projectDetail01"
+				src={detailImage01}
+				alt={detailImage01AltText}
+			/>
+			<img
+				className="projectPicture projectDetail02"
+				src={detailImage02}
+				alt={detailImage02AltText}
+			/>
+
 			{/* TO DO: fix slug so it doesn't bring me to the bottom of the home page */}
-			<CallToAction slug="/" hardText="more info about " variableText={title} />
+			<CallToAction
+				slug="/"
+				hardText="more info about "
+				variableText={title}
+			/>
 		</div>
 	);
 }

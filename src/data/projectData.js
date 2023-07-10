@@ -1,6 +1,8 @@
-import projectPicture from "../images/flowers-in-january.jpg";
-import projectPicture01 from "../images/game/buzz-off-01-square.png";
-import projectPicture02 from "../images/movie-app/movie-app.png";
+import project_titleImage from "../images/flowers-in-january.jpg";
+import project01titleImage from "../images/game/buzz-off-01-square.png";
+import project01detailImage01 from "../images/game/buzz-off-02-square.png";
+import project01detailImage02 from "../images/game/buzz-off-04-square.png";
+import project02titleImage from "../images/movie-app/movie-app.png";
 import funPicture02 from "../images/calculator/calculator.png";
 
 // this whole file is a sort of a template to help me make a fake 'database'
@@ -36,6 +38,14 @@ const posts = [
 		),
 		details: (
 			<div className="details">
+				<p className="projectOverview">
+					Buzz Off! is a Whack-a-Mole style game. The premise is that
+					the player is tasked with a mission to protect picnic-goers
+					from wasps; after 30 seconds to shoo wasps away, getting 1
+					point for every wasp that has been successfully shoo'd. At
+					the end of 30 seconds the player can choose to play again if
+					they want to.
+				</p>
 				<p className="planning">
 					I decided to do a Whack-a-Mole but since I've never actually
 					played it before I had go through a lot of vague ideas
@@ -53,20 +63,44 @@ const posts = [
 					repeat. In hindsight it's kind of funny but it was pretty
 					frustrating at the time.
 				</p>
-				<p className="challenges">
-					I was really shaky with the concept of 'this' in JavaScript,
-					but to have game that worked the way that I'd envisioned I
-					had to push through with it. Another thing that I wanted to
-					implement in this game was a class, which I did! And even
-					though I didn't do much with the class itself, I learned a
-					lot.
+				<div className="challenges">
+					<p className="part01">
+						My first challenge was more of a personal challenge than
+						a technical one: I didn't want to follow tutorials
+						because I know they don't help me actually learn. So I
+						had to come up with a way to get this from an empty page
+						with no interaction to a game without much reference
+						material.
+					</p>
+					<p className="part02">
+						My next challenge was I wanted to implement a class in
+						this game because I had struggled with classes in the
+						past, so I did! Then I wrote an <code>updateHTML</code>{" "}
+						function and used it in combination with the{" "}
+						<code>this</code> keyword to, well, update the relevant
+						HTML as needed. Those two choices made it much easier
+						for me to follow the data flow when I hit issues.
+					</p>
+				</div>
+				<p className="learningOutcomes">
+					At the end of this project I was much more comfortable with
+					event listeners, timers, counters, and the <code>this</code>
+					keyword. I didn't know it at the time but it led me to
+					really appreciate all of the DOM updates you don't have to
+					think about so much when writing javascript in React.
 				</p>
 			</div>
 		),
-		titleImage: projectPicture01,
+		titleImage: project01titleImage,
 		// lol don't put the imported image in curly braces...
 		titleImageAltText:
-			"Opening screen my javascript game called 'Buzz Off!'",
+			"Opening screen my javascript game called 'Buzz Off!', with text text instructions about how to play and a button to start playing.",
+		detailImage01: project01detailImage01,
+		detailImage01AltText:
+			"Play screen of my javascript game, with a countdown timer showing 29 (seconds), a points counter showing 0 Shoopoints, and a wasp near one of the picnic-goers",
+		detailImage02: project01detailImage02,
+		detailImage02AltText:
+			"Play screen of my javascript game, with a countdown timer showing 7 (seconds), a points counter showing 6 Shoopoints, and a wasp on the face of one of the picnic-goers",
 	},
 	{
 		slug: "movie-app",
@@ -83,6 +117,14 @@ const posts = [
 		),
 		details: (
 			<div className="details">
+				<p className="projectOverview">
+					Movie Love is a basic web app developed using React. It lets
+					users view the 25 movies at the top of the Top Rated, Now
+					Playing, and Upcoming categories. Each movie has a card that
+					has some basic data, a heart toggle button that connects to
+					the user's Favourites list that's stored locally, and a View
+					Details button to click into the given movie's page.
+				</p>
 				<p className="planning">
 					We had each worked independently on a mockup for a movie
 					database app prior to planning the actual development, so we
@@ -101,11 +143,16 @@ const posts = [
 					we encountered.
 				</p>
 				<p className="challenges">
-					What were the most challenging things?
+					The first new challenge for me was figuring out how to
+					connect to the TMDb API, and then how to actually get the
+					data I wanted to actually show up -- accessing specific data
+					from an object, what! I had to wrap my head around how{" "}
+					<strong>props</strong> work too. Next up was learning how,
+					when, and where to useState, useEffect, and useContext.
 				</p>
 			</div>
 		),
-		titleImage: projectPicture02,
+		titleImage: project02titleImage,
 		titleImageAltText: "A screenshot of the Movie Love React App",
 	},
 	{
@@ -190,7 +237,7 @@ const posts = [
 				<p className="challenges"></p>
 			</div>
 		),
-		titleImage: projectPicture,
+		titleImage: project_titleImage,
 		titleImageAltText: "flowersssss",
 	},
 	//
@@ -211,7 +258,7 @@ const posts = [
 	// 			<p className="challenges"></p>
 	// 		</div>
 	// 	),
-	// 	titleImage: projectPicture,
+	// 	titleImage: project_titleImage,
 	// 	titleImageAltText: "",
 	// },
 ];

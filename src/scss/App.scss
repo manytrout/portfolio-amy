@@ -36,7 +36,7 @@ code {
 }
 
 a {
-	display: block;
+	// display: block; // wtf why was this a block
 	padding: 6px 12px;
 	text-decoration: none;
 	color: portfolioVariables.$pinkLight;
@@ -164,20 +164,36 @@ section p {
 
 .buttonContainer {
 	padding: 1rem;
-	.ctaButton {
+	button {
 		font-size: 1.5rem;
 		padding: 0.3rem 1rem;
-		border: 5px solid rgb(253, 118, 248);
-		background-color: rgb(73, 84, 81);
-		color: white;
+		border: 1px solid;
+		border-color: transparent;
+		background-color: portfolioVariables.$tealMedium;
+		color: portfolioVariables.$pinkLight;
 		cursor: pointer;
-		transition: background-color 2s cubic-bezier(1,.21,.59,1.06) 100ms
-		/* border: none; */
-		/* box-shadow: 3px 3px pink; */
+		animation: ping-surge 2.5s infinite ease-in-out;
 	}
+	// a {
+
+	// }
+	@keyframes ping-surge {
+		0% {
+			box-shadow: 0 0 0 0px portfolioVariables.$yellowPartlyTransparent;
+		}
+		50% {
+			box-shadow: 0 0 2px 1px portfolioVariables.$yellowPartlyTransparent;
+		}
+		100% {
+			box-shadow: 0 0px 0px 0px
+				portfolioVariables.$yellowPartlyTransparent;
+		}
+	}
+
 	.ctaButton:hover {
-		background-color: #FF1493;
-	  }
+		// background-color: #a85565;
+		background-color: portfolioVariables.$tealMedium;
+	}
 }
 
 #site-navigation {

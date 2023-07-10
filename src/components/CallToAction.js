@@ -1,6 +1,5 @@
 import {Link, Navigate, useParams} from "react-router-dom";
 
-
 function CallToAction(props) {
 	// function handleClick() {
 	// 	let message = "click handled";
@@ -9,11 +8,15 @@ function CallToAction(props) {
 	// }
 	return (
 		<div className="buttonContainer">
-			<button typeof="button" className="ctaButton" >
-				{/* TO DO: remove all handleClick stuff once I'm fully done testing. */}
+			{/* <button typeof="button" className="ctaButton" > */}
+			{/* TO DO: remove all handleClick stuff once I'm fully done testing. */}
 			{/* // onClick={handleClick} > */}
-				<Link to={props.slug}>{props.hardText} {props.variableText}</Link>
-			</button>
+			<Link to={props.slug} >
+				<button typeof="button">
+					{props.hardText} {props.variableText}
+				</button>
+			</Link>
+			{/* </button> */}
 		</div>
 	);
 }
