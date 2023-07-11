@@ -29,6 +29,7 @@ Consider: https://css-tricks.com/breakout-buttons/
 				alt={titleImageAltText}
 			/>
 			<CallToAction
+				className="CTA"
 				slug={slug}
 				hardText="more about"
 				variableText={title}

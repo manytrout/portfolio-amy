@@ -37,7 +37,7 @@ code {
 
 a {
 	// display: block; // wtf why was this a block
-	padding: 6px 12px;
+	// padding: 6px 12px; // wtf why was this padded so weird
 	text-decoration: none;
 	color: portfolio.$pinkLight;
 }
@@ -119,96 +119,130 @@ body {
 	background-attachment: fixed;
 	// background-size: cover;
 	width: 100%;
-	background-repeat: repeat;
+	background-repeat: no-repeat;
 	/* background by SVGBackgrounds.com */
 }
 
 /* accordion functionality from https://dev.to/sababg/css-only-accordion-59db */
-input {
-	position: absolute;
-	opacity: 0;
-	z-index: -1;
-}
-.accordion {
-	margin: 10px;
-	border-radius: 5px;
-	overflow: hidden;
-	box-shadow: 0 4px 4px -2px portfolio.$greyAlmostTransparent;
-}
-.accordion-label {
-	font-size: 1.5rem;
-	padding: 0.3rem 1rem;
-	border: 1px solid;
-	border-color: transparent;
-	background-color: portfolio.$tealMedium;
-	color: portfolio.$pinkLight;
-	cursor: pointer;
-	animation: ping-surge 2.5s infinite ease-in-out;
-}
-@keyframes ping-surge {
-	0% {
-		box-shadow: 0 0 0 0px portfolio.$yellowPartlyTransparent;
-	}
-	50% {
-		box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
-	}
-	100% {
-		box-shadow: 0 0px 0px 0px portfolio.$yellowPartlyTransparent;
-	}
-}
-.accordion-content {
-	max-height: 0;
-	padding: 0 1em;
-	// background: portfolio.$blueDark;
-	background-color: portfolio.$lilacTransparent;
-	transition: all 0.35s;
-}
-input:checked ~ .accordion-content {
-	max-height: 100vh;
-	padding: 1em;
-}
+// // TO DO: research how to make this keyboard friendly
+// input {
+// 	position: absolute;
+// 	opacity: 0;
+// 	z-index: -1;
+// }
+// .accordion {
+// 	margin: 10px;
+// 	border-radius: 5px;
+// 	overflow: hidden;
+// 	box-shadow: 0 4px 4px -2px portfolio.$greyAlmostTransparent;
+// }
+// .accordion-label {
+// 	font-size: 1.5rem;
+// 	padding: 0.3rem 1rem;
+// 	border: 1px solid;
+// 	border-color: transparent;
+// 	background-color: portfolio.$tealMedium;
+// 	color: portfolio.$pinkLight;
+// 	cursor: pointer;
+// 	animation: ping-surge 2.5s infinite ease-in-out;
+// }
+// @keyframes ping-surge {
+// 	0% {
+// 		box-shadow: 0 0 0 0px portfolio.$yellowPartlyTransparent;
+// 	}
+// 	50% {
+// 		box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
+// 	}
+// 	100% {
+// 		box-shadow: 0 0px 0px 0px portfolio.$yellowPartlyTransparent;
+// 	}
+// }
+// .accordion-content {
+// 	max-height: 0;
+// 	padding: 0 1em;
+// 	// background: portfolio.$blueDark;
+// 	background-color: portfolio.$lilacTransparent;
+// 	transition: all 0.35s;
+// }
+// input:checked ~ .accordion-content {
+// 	max-height: 100vh;
+// 	padding: 1em;
+// }
 
 /* accordion functionality from https://dev.to/sababg/css-only-accordion-59db */
 
 
-.buttonContainer {
-	padding: 1rem;
-	button {
-		font-size: 1.5rem;
-		padding: 0.3rem 1rem;
-		border: 1px solid;
-		border-color: transparent;
-		background-color: portfolio.$tealMedium;
-		color: portfolio.$pinkLight;
-		cursor: pointer;
-		animation: ping-surge 2.5s infinite ease-in-out;
-	}
-	@keyframes ping-surge {
-		0% {
-			box-shadow: 0 0 0 0px portfolio.$yellowPartlyTransparent;
-		}
-		50% {
-			box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
-		}
-		100% {
-			box-shadow: 0 0px 0px 0px portfolio.$yellowPartlyTransparent;
-		}
-	}
 
-	.ctaButton:hover {
-		// background-color: #a85565;
-		background-color: portfolio.$tealMedium;
-	}
+/* look ma no media queries */
+/*
+  AUTO GRID
+  Set the minimum item size with `--auto-grid-min-size` and you'll
+  get a fully responsive grid with no media queries.
+*/
+.accordion {
+	--auto-grid-min-size: 16rem;
+
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(var(--auto-grid-min-size), 1fr)
+	);
+	gap:.25rem;
+}
+.singleTile {
+	padding: .25rem;
+	line-height: 1.4;
+}
+.projectText{
+	padding: 1rem;
+	text-align: left;
+	font-size: 1.2rem;
 }
 
-.projects-container {
-	border: solid blue 1px;
+/* look ma no media queries */
+
+// .buttonContainer {
+// 	padding: 1rem;
+// 	button {
+// 		font-size: 1.5rem;
+// 		padding: 0.3rem 1rem;
+// 		border: 1px solid;
+// 		border-color: transparent;
+// 		background-color: portfolio.$tealMedium;
+// 		color: portfolio.$pinkLight;
+// 		cursor: pointer;
+// 		animation: ping-surge 2.5s infinite ease-in-out;
+// 	}
+// 	@keyframes ping-surge {
+// 		0% {
+// 			box-shadow: 0 0 0 0px portfolio.$yellowPartlyTransparent;
+// 		}
+// 		50% {
+// 			box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
+// 		}
+// 		100% {
+// 			box-shadow: 0 0px 0px 0px portfolio.$yellowPartlyTransparent;
+// 		}
+// 	}
+
+// 	.ctaButton:hover {
+// 		// background-color: #a85565;
+// 		background-color: portfolio.$tealMedium;
+// 	}
+// }
+
+.tiles-container {
+	// border: solid blue 1px;
+	border: transparent;
 	.accordion {
 		border: dotted red 2px;
+		margin: 2rem;
+		// border: transparent;
 		.singleTile {
 			margin: 0 auto;
 			width: 18rem;
-			border: dashed yellow 1px;
+			// border: dashed yellow 1px;
+			border: transparent;
 			img {
 				border: dotted white 1px;
 				width: 90%;
@@ -217,12 +251,58 @@ input:checked ~ .accordion-content {
 		}
 	}
 }
-// TO DO: 
-// make projects-container responsive (media queries), 
+.buttonContainer {
+	margin: 1rem auto;
+	button {
+		font-size: 1.5rem;
+		padding: 0.3rem 1rem;
+		margin: 0.5rem;
+		border: 1px solid;
+		border-color: transparent;
+		background-color: portfolio.$tealMedium;
+		color: portfolio.$pinkLight;
+		cursor: pointer;
+		animation: ping-surge 1.8s infinite ease-in-out;
+		a {
+			object-fit: 100%; // TO DO: figure out why this goes beyond the container bounds
+		}
+	}
+
+	@keyframes ping-surge {
+		0% {
+			// box-shadow: 0 0 2px 0px portfolio.$yellowPartlyTransparent;
+			box-shadow: 0 0 1px 1px portfolio.$yellowPartlyTransparent;
+		}
+		// 15% {
+		// 	box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
+		// }
+		// 25% {
+		// 	box-shadow: 0 0 4px 1px portfolio.$yellowPartlyTransparent;
+		// }
+		// 50% {
+		// 	box-shadow: 0 0 6px 2px portfolio.$yellowPartlyTransparent;
+		// }
+		// 75% {
+		// 	box-shadow: 0 0 4px 1px portfolio.$yellowPartlyTransparent;
+		// }
+		// 85% {
+		// 	box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
+		// }
+		100% {
+			box-shadow: 0 0px 3px 2px portfolio.$yellowPartlyTransparent;
+		}
+	}
+
+	.ctaButton:hover {
+		// background-color: #a85565;
+		background-color: portfolio.$tealMedium;
+	}
+}
+// TO DO:
+// make tiles-container responsive (media queries),
 // make it a variable of some sort so I can use it again
 // take out the lovely borders lol
 // also consider how I would make a grid?
-
 
 #site-navigation {
 	// position relative to bottom or top is NECESSARY

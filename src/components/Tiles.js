@@ -13,21 +13,21 @@ function Tiles() {
 		return post.projectType === "fun";
 	});
 	return (
-		<div className="projects-container">
+		<div className="tiles-container">
 			<div className="assignments-container accordion">
-				<input type="checkbox" id="tab1" />
+				{/* <input type="checkbox" id="tab1" />
 				<label className="accordion-label" htmlFor="tab1">
 					Projects
-				</label>
+				</label> */}
 				{assignments.map((singleProject, i) => {
 					return <Tile key={i} {...singleProject} />;
 				})}
 			</div>
 			<div className="fun-container accordion">
-				<input type="checkbox" id="tab2" />
+				{/* <input type="checkbox" id="tab2" />
 				<label className="accordion-label" htmlFor="tab2">
 					Fun
-				</label>
+				</label> */}
 				{fun.map((singleProject, i) => {
 					return <Tile key={i} {...singleProject} />;
 				})}
