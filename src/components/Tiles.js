@@ -3,6 +3,7 @@ import Tile from "./Tile";
 
 function Tiles() {
 	// accordion from https://dev.to/sababg/css-only-accordion-59db
+	// TO DO: ask about accessibility suggestions
 	let posts = getPosts();
 
 	let assignments = posts.filter((post) => {

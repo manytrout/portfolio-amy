@@ -88,7 +88,7 @@ nav {
 	font-size: 1.2em;
 	outline: none;
 }
-// 
+//
 html,
 body {
 	margin: 0;
@@ -136,13 +136,25 @@ input {
 	box-shadow: 0 4px 4px -2px portfolio.$greyAlmostTransparent;
 }
 .accordion-label {
-	display: flex;
-	justify-content: space-between;
-	padding: 1em;
-	font-weight: bold;
+	font-size: 1.5rem;
+	padding: 0.3rem 1rem;
+	border: 1px solid;
+	border-color: transparent;
+	background-color: portfolio.$tealMedium;
+	color: portfolio.$pinkLight;
 	cursor: pointer;
-	background: #333;
-	color: #fff;
+	animation: ping-surge 2.5s infinite ease-in-out;
+}
+@keyframes ping-surge {
+	0% {
+		box-shadow: 0 0 0 0px portfolio.$yellowPartlyTransparent;
+	}
+	50% {
+		box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
+	}
+	100% {
+		box-shadow: 0 0px 0px 0px portfolio.$yellowPartlyTransparent;
+	}
 }
 .accordion-content {
 	max-height: 0;
@@ -158,24 +170,6 @@ input:checked ~ .accordion-content {
 
 /* accordion functionality from https://dev.to/sababg/css-only-accordion-59db */
 
-.portfolio-content {
-	margin: 2rem;
-	padding: 1rem;
-	// display: flex;
-	// flex-wrap: wrap;
-}
-
-section p {
-	background-color: #006980;
-	padding: 0.5rem;
-	margin: 0.2rem;
-}
-
-img {
-	width: 70vw;
-	height: auto;
-	object-fit: contain;
-}
 
 .buttonContainer {
 	padding: 1rem;
@@ -189,9 +183,6 @@ img {
 		cursor: pointer;
 		animation: ping-surge 2.5s infinite ease-in-out;
 	}
-	// a {
-
-	// }
 	@keyframes ping-surge {
 		0% {
 			box-shadow: 0 0 0 0px portfolio.$yellowPartlyTransparent;
@@ -200,8 +191,7 @@ img {
 			box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
 		}
 		100% {
-			box-shadow: 0 0px 0px 0px
-				portfolio.$yellowPartlyTransparent;
+			box-shadow: 0 0px 0px 0px portfolio.$yellowPartlyTransparent;
 		}
 	}
 
@@ -210,6 +200,29 @@ img {
 		background-color: portfolio.$tealMedium;
 	}
 }
+
+.projects-container {
+	border: solid blue 1px;
+	.accordion {
+		border: dotted red 2px;
+		.singleTile {
+			margin: 0 auto;
+			width: 18rem;
+			border: dashed yellow 1px;
+			img {
+				border: dotted white 1px;
+				width: 90%;
+				max-width: 19rem;
+			}
+		}
+	}
+}
+// TO DO: 
+// make projects-container responsive (media queries), 
+// make it a variable of some sort so I can use it again
+// take out the lovely borders lol
+// also consider how I would make a grid?
+
 
 #site-navigation {
 	// position relative to bottom or top is NECESSARY

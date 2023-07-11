@@ -7,9 +7,8 @@ function PageHome() {
 			{/* what if i made sections based on project type */}
 			<About />
 			<section className="projectsSection">
-				<h2>My projects</h2>
-				<p>here's some project examples.</p>
-
+				<h2>My work</h2>
+				{/* TO DO: make H2 a variable */}
 				<Tiles />
 			</section>
 		</main>
