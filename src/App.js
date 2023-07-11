@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import MainNav from "./components/MainNav";
 import PageProject from "./pages/PageProject";
 import PageNotFound from "./pages/PageNotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 	return (
@@ -30,6 +31,7 @@ function App() {
 					details="some stuff"
 				/>
 				<MainNav />
+				<ScrollToTop />
 			</BrowserRouter>
 		</div>
 	);
