@@ -261,13 +261,10 @@ body {
 	// position relative to bottom or top is NECESSARY
 	width: 100%;
 	height: 2.5rem;
-	position: sticky;
+	position: fixed;
 	bottom: 0px;
 	background-color: portfolio.$blueDark;
 }
-// .page-not-found-section {
-
-// }
 
 /* style outline from Jonathon */
 

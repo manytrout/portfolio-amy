@@ -1,5 +1,6 @@
-import PageHome from "../pages/PageHome";
+
 import CallToAction from "./CallToAction";
+
 
 function Project({
 	slug,
@@ -13,6 +14,12 @@ function Project({
 	detailImage02,
 	detailImage02AltText,
 }) {
+
+	// let { pageData } = useParams();
+	// function getProjectSlug({slug}){
+	// 	pageData = {slug};
+	// }
+
 	return (
 		<div className={`singleProject ${slug} ${projectType}`}>
 			<div className="projectFullDetails">
@@ -43,7 +50,7 @@ function Project({
 				/>
 			</div>
 		</div>
-	);
-}
+	) 
+};
 
 export default Project;
