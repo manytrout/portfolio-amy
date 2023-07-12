@@ -1,5 +1,5 @@
 @use "./media";
-@use "./typography";
+@use "./typography" as typog;
 @use "./variables" as portfolio;
 
 /* for testing: */
@@ -20,27 +20,20 @@
 
 /* */
 
-// body {
-// 	margin: 0;
-// 	font-family: "Maven Pro", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-// 		"Helvetica Neue", sans-serif;
-// 	-webkit-font-smoothing: antialiased;
-// 	-moz-osx-font-smoothing: grayscale;
-// }
-
 code {
 	font-family: "Courier Prime", "Courier New", monospace;
 	border: 1px solid transparent;
 	border-radius: 3px;
-	background-color: rgb(160, 160, 160);
+	background-color: rgb(123, 140, 158);
 }
 
 a {
-	// display: block; // wtf why was this a block
-	// padding: 6px 12px; // wtf why was this padded so weird
 	text-decoration: none;
 	color: portfolio.$pinkLight;
+	display: inline-block;
+	width: fit-content;
 }
+
 a:visited {
 	color: portfolio.$pinkMedium;
 }
@@ -89,6 +82,7 @@ nav {
 	outline: none;
 }
 //
+
 html,
 body {
 	margin: 0;
@@ -105,27 +99,207 @@ body {
 .App {
 	height: 100%;
 	width: 100%;
-	// display: flex;
-	// // flex-wrap: wrap;
-	// // flex-direction: column;
-	// align-items: center;
-	// justify-content: space-between;
-	// text-align: center;
-	// font-size: calc(10px + 1.2vmin);
-	// // the calc above, with 1.6vmin, seems like close enough to the right balance for now
+	font-size: typog.$textSize;
+	// calc(10px + 1.2vmin);
+	// the calc above, with 1.6vmin, seems like close enough to the right balance for now
 	color: #fff6f6;
 	background-color: #333355;
 	background-image: portfolio.$spaceBackground;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
+	background-size: cover;
 	/* background by SVGBackgrounds.com */
+}
+main {
+	width: 90vw;
+	padding: 0rem 0.5em;
+	margin: 0 auto;
+}
+.tiles-container {
+	// border: solid 1px yellow;
+	.singleTile {
+		width: 16em;
+		img,
+		p {
+			width: calc(90vw - 1em);
+		}
+	}
 }
 .single-page {
 	// TO DO: make sure the nav etc is sticky
-	height: 100vh;
+	height: 100%;
 	width: 100%;
 }
+.buttonContainer {
+	position: relative;
+	top: -2rem;
+	left: 20px;
+	right: 20px;
+	button {
+		font-size: typog.$textSize;
+		padding: 0.3rem;
+		margin: 0.2rem 0.5rem;
+		border: 1px solid;
+		border-color: transparent;
+		background-color: portfolio.$tealMedium;
+		color: portfolio.$pinkLight;
+		cursor: pointer;
+		animation: ping-surge 1.8s infinite ease;
+	}
 
+	@keyframes ping-surge {
+		0% {
+			box-shadow: 0 0 1px 1px portfolio.$tealMedium;
+		}
+		50% {
+			box-shadow: 0 0 2px 2px portfolio.$tealMedium;
+		}
+		100% {
+			box-shadow: 0 0px 1px 1px portfolio.$tealMedium;
+		}
+	}
+}
+.buttonContainer:focus {
+	border: portfolio.$lilacPartlyTransparent;
+}
+
+// TO DO: figure out how to do something non-obnoxious with the button on focus/over
+// .buttonContainer:hover {
+// 	animation: wiggle 1s;
+// 	animation-iteration-count: infinite;
+// }
+// @keyframes wiggle {
+// 	0% {
+// 		transform: translate(1px, 1px);
+// 	}
+// 	50% {
+// 		transform: translate(0px, -1px);
+// 	}
+// 	100%{
+// 		transform: translate(1px, 1px);
+// 	}
+// }
+
+// TO DO:
+// make tiles-container responsive (media queries),
+// make it a variable of some sort so I can use it again
+// DONE: take out the lovely borders lol
+// also consider how I would make a grid?
+// add skip to link functionality for real
+
+#site-navigation {
+	// position relative to bottom or top is NECESSARY
+	width: 100%;
+	height: 2.5rem;
+	position: fixed;
+	bottom: 0px;
+	background-color: portfolio.$blueDark;
+}
+
+.pageUL {
+	display: flex;
+	flex-direction: row;
+	position: fixed;
+	margin: 0 auto;
+	width: 100%;
+	bottom: 2rem;
+	li {
+		list-style: none;
+	}
+}
+
+/* style outline from Jonathon */
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic (added in normalize.css package)
+	- Normalize
+	- Box sizing
+	- Media width
+# Base
+	- Typography
+	- Elements
+	- Links
+# Components
+	- Header
+	- Main
+	- Footer
+--------------------------------------------------------------*/
+/* STYLES DRAFT Elements. TO DO: remove everything that's commented out below this */
+
+// .buttonContainer {
+// 	margin: 1rem auto;
+// 	button {
+// 		font-size: 1.5rem;
+// 		padding: 0.3rem 1rem;
+// 		margin: 0.5rem;
+// 		border: 1px solid;
+// 		border-color: transparent;
+// 		background-color: portfolio.$tealMedium;
+// 		color: portfolio.$pinkLight;
+// 		cursor: pointer;
+// 		animation: ping-surge 1.8s infinite ease-in-out;
+// 		a {
+// 			object-fit: 100%; // TO DO: figure out why this goes beyond the container bounds
+// 		}
+// 	}
+
+// 	@keyframes ping-surge {
+// 		0% {
+// 			// box-shadow: 0 0 2px 0px portfolio.$yellowPartlyTransparent;
+// 			box-shadow: 0 0 1px 1px portfolio.$yellowPartlyTransparent;
+// 		}
+// 		// 15% {
+// 		// 	box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
+// 		// }
+// 		// 25% {
+// 		// 	box-shadow: 0 0 4px 1px portfolio.$yellowPartlyTransparent;
+// 		// }
+// 		// 50% {
+// 		// 	box-shadow: 0 0 6px 2px portfolio.$yellowPartlyTransparent;
+// 		// }
+// 		// 75% {
+// 		// 	box-shadow: 0 0 4px 1px portfolio.$yellowPartlyTransparent;
+// 		// }
+// 		// 85% {
+// 		// 	box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
+// 		// }
+// 		100% {
+// 			box-shadow: 0 0px 3px 2px portfolio.$yellowPartlyTransparent;
+// 		}
+// 	}
+// //
+
+// .tiles-container {
+// 	border: solid blue 1px;
+// 	// border: transparent;
+// 	.accordion {
+// 		// border: dotted red 2px;
+// 		margin: 2rem;
+// 		// border: transparent;
+// 		.singleTile {
+// 			margin: 0;
+// 			width: 18rem;
+// 			border: dashed yellow 1px;
+// 			// border: transparent;
+// 			img {
+// 				// border: dotted white 1px;
+// 				width: 90%;
+// 				max-width: 19rem;
+// 			}
+// 			button {
+// 				width: 100%;
+// 				position:relative;
+// 				bottom: 0;
+// 				left: 0;
+// 				padding: 0;
+// 				margin: 0;
+// 			}
+// 		}
+// 	}
+// }
+// //
 // /* accordion functionality from https://dev.to/sababg/css-only-accordion-59db */
 // // TO DO: research how to make this keyboard friendly
 // input {
@@ -174,113 +348,3 @@ body {
 // }
 
 // /* accordion functionality from https://dev.to/sababg/css-only-accordion-59db */
-
-// .buttonContainer {
-// 	margin: 1rem auto;
-// 	button {
-// 		font-size: 1.5rem;
-// 		padding: 0.3rem 1rem;
-// 		margin: 0.5rem;
-// 		border: 1px solid;
-// 		border-color: transparent;
-// 		background-color: portfolio.$tealMedium;
-// 		color: portfolio.$pinkLight;
-// 		cursor: pointer;
-// 		animation: ping-surge 1.8s infinite ease-in-out;
-// 		a {
-// 			object-fit: 100%; // TO DO: figure out why this goes beyond the container bounds
-// 		}
-// 	}
-
-// 	@keyframes ping-surge {
-// 		0% {
-// 			// box-shadow: 0 0 2px 0px portfolio.$yellowPartlyTransparent;
-// 			box-shadow: 0 0 1px 1px portfolio.$yellowPartlyTransparent;
-// 		}
-// 		// 15% {
-// 		// 	box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
-// 		// }
-// 		// 25% {
-// 		// 	box-shadow: 0 0 4px 1px portfolio.$yellowPartlyTransparent;
-// 		// }
-// 		// 50% {
-// 		// 	box-shadow: 0 0 6px 2px portfolio.$yellowPartlyTransparent;
-// 		// }
-// 		// 75% {
-// 		// 	box-shadow: 0 0 4px 1px portfolio.$yellowPartlyTransparent;
-// 		// }
-// 		// 85% {
-// 		// 	box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
-// 		// }
-// 		100% {
-// 			box-shadow: 0 0px 3px 2px portfolio.$yellowPartlyTransparent;
-// 		}
-// 	}
-
-// 	.ctaButton:hover {
-// 		// background-color: #a85565;
-// 		background-color: portfolio.$tealMedium;
-// 	}
-// }
-
-// .tiles-container {
-// 	border: solid blue 1px;
-// 	border: transparent;
-// 	.accordion {
-// 		// border: dotted red 2px;
-// 		margin: 2rem;
-// 		// border: transparent;
-// 		.singleTile {
-// 			margin: 0;
-// 			width: 18rem;
-// 			border: dashed yellow 1px;
-// 			// border: transparent;
-// 			img {
-// 				// border: dotted white 1px;
-// 				width: 90%;
-// 				max-width: 19rem;
-// 			}
-// 			button {
-// 				width: 100%;
-// 				position:relative;
-// 				bottom: 0;
-// 				left: 0;
-// 				padding: 0;
-// 				margin: 0;
-// 			}
-// 		}
-// 	}
-// }
-// TO DO:
-// make tiles-container responsive (media queries),
-// make it a variable of some sort so I can use it again
-// take out the lovely borders lol
-// also consider how I would make a grid?
-
-#site-navigation {
-	// position relative to bottom or top is NECESSARY
-	width: 100%;
-	height: 2.5rem;
-	position: fixed;
-	bottom: 0px;
-	background-color: portfolio.$blueDark;
-}
-
-/* style outline from Jonathon */
-
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Generic (added in normalize.css package)
-	- Normalize
-	- Box sizing
-	- Media width
-# Base
-	- Typography
-	- Elements
-	- Links
-# Components
-	- Header
-	- Main
-	- Footer
---------------------------------------------------------------*/

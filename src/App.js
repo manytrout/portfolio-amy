@@ -21,12 +21,14 @@ function App() {
 					<Route path="/" element={<PageHome />} />
 					<Route path="/:slug" element={<PageProject />} />
 				</Routes>
-				<Footer
-					myName="Amy Turton"
-					email="real@email.com"
-					details="some stuff"
-				/>
-				<MainNav />
+				<div className="bottom-content">
+					<Footer
+						myName="Amy Turton"
+						email="real@email.com"
+						details="some stuff"
+					/>
+					<MainNav />
+				</div>
 				<ScrollToTop />
 			</BrowserRouter>
 		</div>

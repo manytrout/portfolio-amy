@@ -197,7 +197,7 @@ const posts = [
 		titleImageAltText: "A screenshot of my calculator app",
 	},
 	{
-		slug: "capstone",
+		slug: "amazilia-acrescapers",
 		projectType: "assignment",
 		title: "Amazilia Acrescapers",
 		body: (
