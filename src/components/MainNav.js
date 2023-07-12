@@ -6,9 +6,9 @@ function MainNav() {
 				<li>
 					<NavLink to="/">Home</NavLink>
 				</li>
-				<li>
+				{/* <li>
 					<NavLink to="/about">About</NavLink>
-				</li>
+				</li> */}
 			</ul>
 		</nav>
 	);

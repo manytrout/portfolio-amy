@@ -239,7 +239,32 @@ const posts = [
 		),
 		titleImage: project_titleImage,
 		titleImageAltText: "flowersssss",
-	},
+	},{
+		slug: "short-sample",
+		projectType: "assignment",
+		title: "Short Sample For Testing",
+		body: (
+			<div className="summary">
+				<p>
+					A short sample
+				</p>
+			</div>
+		),
+		details: (
+			<div className="details">
+				<p className="planning">
+					Short planning sample
+				</p>
+				<p className="working">
+					short working sample
+				</p>
+				<p className="challenges"></p>
+			</div>
+		)
+		// ,
+		// titleImage: project_titleImage,
+		// titleImageAltText: "flowersssss",
+	}
 	//
 	// TEMPLATE for projectData record
 	// {
