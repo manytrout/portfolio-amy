@@ -19,15 +19,15 @@ Consider: https://css-tricks.com/breakout-buttons/
 
 				To indicate that it's clickable it could also surge on mobile (how?)/ have a tracer around it on hover... */}
 
-			<div className="projectText">
-				<h2 className="projectTitle">{title}</h2>
-				<div className="projectBody">{body}</div>
-			</div>
 			<img
 				className="projectPicture"
 				src={titleImage}
 				alt={titleImageAltText}
 			/>
+			<div className="projectText">
+				<div className="projectTitle">{title}</div>
+				<div className="projectBody">{body}</div>
+			</div>
 			<CallToAction
 				className="CTA"
 				slug={slug}

@@ -1,6 +1,6 @@
-@use "./media";
+@use "./media" as media;
 @use "./typography" as typog;
-@use "./variables" as portfolio;
+@use "./variables" as variables;
 
 /* for testing: */
 
@@ -29,24 +29,24 @@ code {
 
 a {
 	text-decoration: none;
-	color: portfolio.$pinkLight;
+	color: variables.$pinkLight;
 	display: inline-block;
 	width: fit-content;
 }
 
 a:visited {
-	color: portfolio.$pinkMedium;
+	color: variables.$pinkMedium;
 }
 
 a:hover,
 a:focus,
 a:active {
-	text-decoration: underline solid portfolio.$pinkDark;
+	text-decoration: underline solid variables.$pinkDark;
 }
 
-a:focus {
-	outline: 1px solid white;
-}
+// a:focus {
+// 	outline: 1px solid white;
+// }
 
 a:hover {
 	cursor: pointer;
@@ -70,14 +70,14 @@ nav {
 	z-index: 999;
 	padding: 1em;
 	background-color: white;
-	color: portfolio.$blueDark;
+	color: variables.$blueDark;
 	opacity: 0;
 }
 .skip-link:focus {
 	left: 50%;
 	transform: translateX(-50%);
 	opacity: 1;
-	color: portfolio.$blueDark;
+	color: variables.$blueDark;
 	font-size: 1.2em;
 	outline: none;
 }
@@ -104,7 +104,7 @@ body {
 	// the calc above, with 1.6vmin, seems like close enough to the right balance for now
 	color: #fff6f6;
 	background-color: #333355;
-	background-image: portfolio.$spaceBackground;
+	background-image: variables.$spaceBackground;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -115,12 +115,18 @@ main {
 	padding: 0;
 	margin: 0;
 }
+
+// to prevent either of these items from being too wide
+.aboutMe,
 .projects {
 	width: 100%;
 	padding: 0 1rem;
+	margin: 0 auto;
+}
 
+.projects {
 	--grid-layout-gap: 10px;
-	--grid-column-count: 4;
+	--grid-column-count: 1;
 	--grid-item--min-width: 16rem;
 
 	/** css-tricks! https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/
@@ -141,9 +147,75 @@ main {
 		)
 	);
 	grid-gap: var(--grid-layout-gap);
+	.singleTile {
+		// box-shadow:     inset 0 -3em 3em variables.$lilacAlmostTransparent,
+		// 0 0 0 2px variables.$lilacPartlyTransparent,
+		// 0.3em 0.3em 1em variables.$lilacAlmostTransparent;
+		// border: variables.$blueDark;
+		// background-color: variables.$yellowOpaque;
+		background: linear-gradient(
+			-180deg,
+			variables.$purpleDark,
+			variables.$purpleVeryDark
+		);
+		color: variables.$pinkPale;
+		
+
+	}
+	.singleTile:hover{
+		transform: scale(1.05);
+		transition: transform .4s ease-in-out;
+	}
 	img,
-	p {
-		width: calc(99% - 1rem);
+	.summary {
+		width: calc(99% - 2rem);
+		// width: 99%;
+		margin: 0 1rem;
+	}
+	// img {
+	// 	overflow-clip-margin: content-box;
+	// 	overflow: clip;
+	// 	border: solid 1px variables.$tealPale;
+		
+	// }
+	// img:hover{
+	// 	transform: scale(1.2);
+	// 	transition: transform .4s ease-in-out;
+	// }
+	@media (min-width: media.$breakpoint-small) {
+		//   background-color: #87ceeb;
+		// width: 95%;
+		--grid-layout-gap: 0.5rem;
+		--grid-column-count: 2;
+		--grid-item--min-width: 18rem;
+		// .singleTile {
+		// 	border: variables.$blueDark;
+		// 	background-color: variables.$yellowOpaque;
+		// 	color: variables.$blueDark;
+		// }
+	}
+	@media (min-width: media.$breakpoint-medium) {
+		//   background-color: #87ceeb;
+		width: 95%;
+		--grid-layout-gap: 0.5rem;
+		--grid-column-count: 2;
+		--grid-item--min-width: 20rem;
+		// .singleTile {
+		// 	// background-color: variables.$yellowOpaque;
+		// 	// color: variables.$blueDark;
+		// }
+	}
+
+	@media (min-width: media.$breakpoint-large) {
+		//   background-color: #87ceeb;
+		width: 80%;
+		--grid-layout-gap: 0.5rem;
+		--grid-column-count: 3;
+		--grid-item--min-width: 22rem;
+		// .singleTile {
+		// 	// background-color: variables.$yellowOpaque;
+		// 	// color: variables.$blueDark;
+		// }
 	}
 }
 
@@ -152,27 +224,24 @@ main {
 	height: 100%;
 	width: 100%;
 }
-.singleTile{
+.singleTile {
 	display: inline-block;
 }
 
 .buttonContainer {
 	position: relative;
 	top: 0;
+	margin: 1rem;
 	// left: 20px;
 	// right: 20px;
 	button {
 		font-size: typog.$textSize;
 		width: 100%;
-		// padding: 0.3rem;
-		// margin: 0.2rem 0.5rem;
-		border: 1px solid;
-		// border-radius: 15px;
-		border-bottom-left-radius: 10px;
-		border-bottom-right-radius: 10px;
-		border-color: transparent;
-		background-color: portfolio.$tealMedium;
-		color: portfolio.$pinkLight;
+		padding: 0.3rem;
+		// margin: 0.5rem;
+		border: 1px solid transparent;
+		background-color: variables.$tealMedium;
+		color: variables.$pinkLight;
 		cursor: pointer;
 		animation: ping-surge 1.8s infinite;
 		animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
@@ -180,18 +249,19 @@ main {
 
 	@keyframes ping-surge {
 		50% {
-			box-shadow: -1px 0px portfolio.$tealMediumSemiTransparent,
-				1px 0px portfolio.$tealMediumSemiTransparent,
-				0px -1px portfolio.$tealMediumSemiTransparent,
-				1px 0px portfolio.$tealMediumSemiTransparent;
+			box-shadow: -1px 0px variables.$tealMediumSemiTransparent,
+				1px 0px variables.$tealMediumSemiTransparent,
+				0px -1px variables.$tealMediumSemiTransparent,
+				1px 0px variables.$tealMediumSemiTransparent;
 		}
 		// 25% {
 		// 	box-shadow: 2px 0px teal, -2px 0px teal;
 		// }
 	}
 }
-.buttonContainer:focus {
-	border: portfolio.$lilacPartlyTransparent;
+button :focus {
+	// border: variables.$lilacPartlyTransparent;
+	outline: 1px solid white;
 }
 
 // TO DO: figure out how to do something non-obnoxious with the button on focus/over
@@ -224,7 +294,7 @@ main {
 	height: 2.5rem;
 	position: fixed;
 	bottom: 0px;
-	background-color: portfolio.$blueDark;
+	background-color: variables.$blueDark;
 }
 
 .pageUL {
@@ -267,8 +337,8 @@ main {
 // 		margin: 0.5rem;
 // 		border: 1px solid;
 // 		border-color: transparent;
-// 		background-color: portfolio.$tealMedium;
-// 		color: portfolio.$pinkLight;
+// 		background-color: variables.$tealMedium;
+// 		color: variables.$pinkLight;
 // 		cursor: pointer;
 // 		animation: ping-surge 1.8s infinite ease-in-out;
 // 		a {
@@ -278,26 +348,26 @@ main {
 
 // 	@keyframes ping-surge {
 // 		0% {
-// 			// box-shadow: 0 0 2px 0px portfolio.$yellowPartlyTransparent;
-// 			box-shadow: 0 0 1px 1px portfolio.$yellowPartlyTransparent;
+// 			// box-shadow: 0 0 2px 0px variables.$yellowPartlyTransparent;
+// 			box-shadow: 0 0 1px 1px variables.$yellowPartlyTransparent;
 // 		}
 // 		// 15% {
-// 		// 	box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
+// 		// 	box-shadow: 0 0 2px 1px variables.$yellowPartlyTransparent;
 // 		// }
 // 		// 25% {
-// 		// 	box-shadow: 0 0 4px 1px portfolio.$yellowPartlyTransparent;
+// 		// 	box-shadow: 0 0 4px 1px variables.$yellowPartlyTransparent;
 // 		// }
 // 		// 50% {
-// 		// 	box-shadow: 0 0 6px 2px portfolio.$yellowPartlyTransparent;
+// 		// 	box-shadow: 0 0 6px 2px variables.$yellowPartlyTransparent;
 // 		// }
 // 		// 75% {
-// 		// 	box-shadow: 0 0 4px 1px portfolio.$yellowPartlyTransparent;
+// 		// 	box-shadow: 0 0 4px 1px variables.$yellowPartlyTransparent;
 // 		// }
 // 		// 85% {
-// 		// 	box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
+// 		// 	box-shadow: 0 0 2px 1px variables.$yellowPartlyTransparent;
 // 		// }
 // 		100% {
-// 			box-shadow: 0 0px 3px 2px portfolio.$yellowPartlyTransparent;
+// 			box-shadow: 0 0px 3px 2px variables.$yellowPartlyTransparent;
 // 		}
 // 	}
 // //
@@ -342,34 +412,34 @@ main {
 // 	margin: 10px;
 // 	border-radius: 5px;
 // 	overflow: hidden;
-// 	box-shadow: 0 4px 4px -2px portfolio.$greyAlmostTransparent;
+// 	box-shadow: 0 4px 4px -2px variables.$greyAlmostTransparent;
 // }
 // .accordion-label {
 // 	font-size: 1.5rem;
 // 	padding: 0.3rem 1rem;
 // 	border: 1px solid;
 // 	border-color: transparent;
-// 	background-color: portfolio.$tealMedium;
-// 	color: portfolio.$pinkLight;
+// 	background-color: variables.$tealMedium;
+// 	color: variables.$pinkLight;
 // 	cursor: pointer;
 // 	animation: ping-surge 2.5s infinite ease-in-out;
 // }
 // @keyframes ping-surge {
 // 	0% {
-// 		box-shadow: 0 0 0 0px portfolio.$yellowPartlyTransparent;
+// 		box-shadow: 0 0 0 0px variables.$yellowPartlyTransparent;
 // 	}
 // 	50% {
-// 		box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
+// 		box-shadow: 0 0 2px 1px variables.$yellowPartlyTransparent;
 // 	}
 // 	100% {
-// 		box-shadow: 0 0px 0px 0px portfolio.$yellowPartlyTransparent;
+// 		box-shadow: 0 0px 0px 0px variables.$yellowPartlyTransparent;
 // 	}
 // }
 // .accordion-content {
 // 	max-height: 0;
 // 	padding: 0 1em;
-// 	// background: portfolio.$blueDark;
-// 	background-color: portfolio.$lilacTransparent;
+// 	// background: variables.$blueDark;
+// 	background-color: variables.$lilacTransparent;
 // 	transition: all 0.35s;
 // }
 // input:checked ~ .accordion-content {

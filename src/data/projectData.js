@@ -23,7 +23,7 @@ const posts = [
 	{
 		slug: "buzz-off",
 		projectType: "assignment",
-		title: "Buzz Off!",
+		title: (<h3>Buzz Off!</h3>),
 		body: (
 			<div className="summary">
 				<div>
