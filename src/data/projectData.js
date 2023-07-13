@@ -28,10 +28,12 @@ const posts = [
 			<div className="summary">
 				<div>
 					<p>
-						Buzz Off! is the very first web app that I designed on
-						my own. It's a Whack-a-Mole type browser game that I
+						{/* Buzz Off! is  */}
+						The very first web app that I designed on
+						my own. 
+						{/* It's a Whack-a-Mole type browser game that I
 						wrote in vanilla JavasScript over the course of a few
-						weeks.
+						weeks. */}
 					</p>
 				</div>
 			</div>
@@ -109,9 +111,10 @@ const posts = [
 		body: (
 			<div className="summary">
 				<p>
-					A movie look-up app that calls the TMDb API to display movie
+					A movie look-up app made in React.
+					{/* that calls the TMDb API to display movie
 					posters, reviews, genres, and sorting options. This was a
-					pair project developed with Kassandra Haftner.
+					pair project developed with Kassandra Haftner. */}
 				</p>
 			</div>
 		),
@@ -162,10 +165,11 @@ const posts = [
 		body: (
 			<div className="summary">
 				<p>
-					Calculator made in React, including memory buttons, square
+					Calculator made in React!
+					{/* including memory buttons, square
 					root, and other functions. Strictly speaking, this was a
 					small assignment buuuuttt it was a lot of fun and it's when
-					React started to click for me.
+					React started to click for me. */}
 				</p>
 			</div>
 		),
@@ -203,9 +207,9 @@ const posts = [
 		body: (
 			<div className="summary">
 				<p>
-					A wordpres-driven website for Amazalia Acrescapers, a
-					landscaping and garden maintenance company providing
-					services on Hawai'i (aka The Big Island).
+					A wordpres-driven website for Amazalia Acrescapers.
+					{/* a landscaping and garden maintenance company providing
+					services on Hawai'i (aka The Big Island). */}
 				</p>
 			</div>
 		),

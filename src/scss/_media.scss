@@ -7,7 +7,8 @@ $breakpoint-extra-large: 1300px;
 @mixin min-width($breakpoint) {
   @if ($breakpoint == small){
     @media (min-width: $breakpoint-small){
-      @content;
+      // @content;
+      grid-template-columns: 1fr;
     }
   }
     @else if ($breakpoint == medium) {
@@ -26,3 +27,32 @@ $breakpoint-extra-large: 1300px;
       @error "UNKNOWN MEDIA BREAKPOINT #{$breakpoint}";
     }
   }
+
+  // $mobile: 768px;
+  // $tablet: 1024px;
+  // $desktop: 1200px;
+  
+  // @media (max-width: $mobile) {
+  //   .tiles-container {
+  //     grid-template-columns: 1fr;
+  //   }
+  // }
+  
+  // @media (min-width: $mobile) and (max-width: $tablet) {
+  //   .tiles-container {
+  //     grid-template-columns: 1fr 1fr;
+  //   }
+  // }
+  
+  // @media (min-width: $tablet) and (max-width: $desktop) {
+  //   .tiles-container {
+  //     grid-template-columns: 1fr 1fr 1fr;
+  //   }
+  // }
+  
+  // @media (min-width: $desktop) {
+  //   .tiles-container {
+  //     grid-template-columns: 1fr 1fr 1fr 1fr;
+  //   }
+  // }
+  

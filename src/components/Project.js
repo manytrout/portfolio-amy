@@ -45,7 +45,7 @@ function Project({
 				{/* DONE: fix slug so it doesn't bring me to the bottom of the home page */}
 				<CallToAction
 					slug="/"
-					hardText="a CTA goes here"
+					hardText="CTA pls"
 					variableText={title}
 				/>
 			</div>

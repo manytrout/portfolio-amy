@@ -6,15 +6,15 @@
 
 // main {
 // 	@include media.min-width(small) {
-// 		// background: yellow;
+// 		background: yellow;
 
 // 	}
-// 	@include media.min-width(medium) {
-// 		// background: red;
+// @include media.min-width(medium) {
+// 		background: red;
 // 	}
 
 // 	@include media.min-width(large) {
-// 		// background: green;
+// 		background: green;
 // 	}
 // }
 
@@ -111,52 +111,83 @@ body {
 	/* background by SVGBackgrounds.com */
 }
 main {
-	width: 90vw;
-	padding: 0rem 0.5em;
-	margin: 0 auto;
+	width: 100vw;
+	padding: 0;
+	margin: 0;
 }
-.tiles-container {
-	// border: solid 1px yellow;
-	.singleTile {
-		width: 16em;
-		img,
-		p {
-			width: calc(90vw - 1em);
-		}
+.projects {
+	width: 100%;
+	padding: 0 1rem;
+
+	--grid-layout-gap: 10px;
+	--grid-column-count: 4;
+	--grid-item--min-width: 16rem;
+
+	/** css-tricks! https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/
+		 * Calculated values.
+		 */
+	--gap-count: calc(var(--grid-column-count) - 1);
+	--total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+	--grid-item--max-width: calc(
+		(100% - var(--total-gap-width)) / var(--grid-column-count)
+	);
+
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(
+			max(var(--grid-item--min-width), var(--grid-item--max-width)),
+			1fr
+		)
+	);
+	grid-gap: var(--grid-layout-gap);
+	img,
+	p {
+		width: calc(99% - 1rem);
 	}
 }
+
 .single-page {
 	// TO DO: make sure the nav etc is sticky
 	height: 100%;
 	width: 100%;
 }
+.singleTile{
+	display: inline-block;
+}
+
 .buttonContainer {
 	position: relative;
-	top: -2rem;
-	left: 20px;
-	right: 20px;
+	top: 0;
+	// left: 20px;
+	// right: 20px;
 	button {
 		font-size: typog.$textSize;
-		padding: 0.3rem;
-		margin: 0.2rem 0.5rem;
+		width: 100%;
+		// padding: 0.3rem;
+		// margin: 0.2rem 0.5rem;
 		border: 1px solid;
+		// border-radius: 15px;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
 		border-color: transparent;
 		background-color: portfolio.$tealMedium;
 		color: portfolio.$pinkLight;
 		cursor: pointer;
-		animation: ping-surge 1.8s infinite ease;
+		animation: ping-surge 1.8s infinite;
+		animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
 	}
 
 	@keyframes ping-surge {
-		0% {
-			box-shadow: 0 0 1px 1px portfolio.$tealMedium;
-		}
 		50% {
-			box-shadow: 0 0 2px 2px portfolio.$tealMedium;
+			box-shadow: -1px 0px portfolio.$tealMediumSemiTransparent,
+				1px 0px portfolio.$tealMediumSemiTransparent,
+				0px -1px portfolio.$tealMediumSemiTransparent,
+				1px 0px portfolio.$tealMediumSemiTransparent;
 		}
-		100% {
-			box-shadow: 0 0px 1px 1px portfolio.$tealMedium;
-		}
+		// 25% {
+		// 	box-shadow: 2px 0px teal, -2px 0px teal;
+		// }
 	}
 }
 .buttonContainer:focus {
@@ -200,8 +231,8 @@ main {
 	display: flex;
 	flex-direction: row;
 	position: fixed;
-	margin: 0 auto;
-	width: 100%;
+	// margin: 0 auto;
+	// width: 100%;
 	bottom: 2rem;
 	li {
 		list-style: none;
@@ -348,3 +379,28 @@ main {
 // }
 
 // /* accordion functionality from https://dev.to/sababg/css-only-accordion-59db */
+
+/* more crap */
+// margin: 0 .5rem;
+// width: calc(100vw - 1em);
+// width: 100%;
+
+// border: solid 1px yellow;
+/* comment this back in later
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	// thank u css-tricks!!
+	margin: 0 auto;
+	grid-gap: 0.4rem;
+	.singleTile {
+		margin: 0 auto;
+		// justify-items: center;
+		width: 17rem;
+		img,
+		p {
+			width: calc(99% - 1em);
+		}
+		// border: dashed 1px orange;
+	}
+	// end of comment this back in later 
+	*/
