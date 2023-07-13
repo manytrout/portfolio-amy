@@ -89,8 +89,14 @@ body {
 	padding: 0;
 }
 body {
-	height: 100vh;
-	width: 100%;
+	min-height: 100vh;
+	color: #fff6f6;
+	background-color: #333355;
+	background-image: variables.$spaceBackground;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* background by SVGBackgrounds.com */
 }
 * {
 	box-sizing: border-box;
@@ -102,18 +108,36 @@ body {
 	font-size: typog.$textSize;
 	// calc(10px + 1.2vmin);
 	// the calc above, with 1.6vmin, seems like close enough to the right balance for now
-	color: #fff6f6;
-	background-color: #333355;
-	background-image: variables.$spaceBackground;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
-	/* background by SVGBackgrounds.com */
+	// color: #fff6f6;
+	// background-color: #333355;
+	// background-image: variables.$spaceBackground;
+	// background-attachment: fixed;
+	// background-repeat: no-repeat;
+	// background-size: cover;
+	// /* background by SVGBackgrounds.com */
 }
 main {
-	width: 100vw;
+	width: 100%;
 	padding: 0;
-	margin: 0;
+	@media (min-width: media.$breakpoint-medium) {
+		// width: calc(90% - 20rem);
+		width: 90%;
+		padding-left: 10rem;
+		padding-right: 1rem;
+	}
+	@media (min-width: media.$breakpoint-large) {
+		// width: calc(90% - 20rem);
+		width: 80%;
+		padding-left: 17rem;
+		padding-right: 1rem;
+	}
+	@media (min-width: media.$breakpoint-large) {
+		// width: calc(90% - 20rem);
+		max-width: 80rem;
+		padding-left: 17rem;
+		padding-right: 1rem;
+	}
+
 }
 
 // to prevent either of these items from being too wide
@@ -121,124 +145,18 @@ main {
 .projects {
 	width: 100%;
 	padding: 0 1rem;
-	margin: 0 auto;
-}
-
-.projects {
-	--grid-layout-gap: 10px;
-	--grid-column-count: 1;
-	--grid-item--min-width: 16rem;
-
-	/** css-tricks! https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/
-		 * Calculated values.
-		 */
-	--gap-count: calc(var(--grid-column-count) - 1);
-	--total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
-	--grid-item--max-width: calc(
-		(100% - var(--total-gap-width)) / var(--grid-column-count)
-	);
-
-	display: grid;
-	grid-template-columns: repeat(
-		auto-fill,
-		minmax(
-			max(var(--grid-item--min-width), var(--grid-item--max-width)),
-			1fr
-		)
-	);
-	grid-gap: var(--grid-layout-gap);
-	.singleTile {
-		// box-shadow:     inset 0 -3em 3em variables.$lilacAlmostTransparent,
-		// 0 0 0 2px variables.$lilacPartlyTransparent,
-		// 0.3em 0.3em 1em variables.$lilacAlmostTransparent;
-		// border: variables.$blueDark;
-		// background-color: variables.$yellowOpaque;
-		background: linear-gradient(
-			-180deg,
-			variables.$purpleDark,
-			variables.$purpleVeryDark
-		);
-		color: variables.$pinkPale;
-		
-
-	}
-	.singleTile:hover{
-		transform: scale(1.05);
-		transition: transform .4s ease-in-out;
-	}
-	img,
-	.summary {
-		width: calc(99% - 2rem);
-		// width: 99%;
-		margin: 0 1rem;
-	}
-	// img {
-	// 	overflow-clip-margin: content-box;
-	// 	overflow: clip;
-	// 	border: solid 1px variables.$tealPale;
-		
-	// }
-	// img:hover{
-	// 	transform: scale(1.2);
-	// 	transition: transform .4s ease-in-out;
-	// }
-	@media (min-width: media.$breakpoint-small) {
-		//   background-color: #87ceeb;
-		// width: 95%;
-		--grid-layout-gap: 0.5rem;
-		--grid-column-count: 2;
-		--grid-item--min-width: 18rem;
-		// .singleTile {
-		// 	border: variables.$blueDark;
-		// 	background-color: variables.$yellowOpaque;
-		// 	color: variables.$blueDark;
-		// }
-	}
-	@media (min-width: media.$breakpoint-medium) {
-		//   background-color: #87ceeb;
-		width: 95%;
-		--grid-layout-gap: 0.5rem;
-		--grid-column-count: 2;
-		--grid-item--min-width: 20rem;
-		// .singleTile {
-		// 	// background-color: variables.$yellowOpaque;
-		// 	// color: variables.$blueDark;
-		// }
-	}
-
-	@media (min-width: media.$breakpoint-large) {
-		//   background-color: #87ceeb;
-		width: 80%;
-		--grid-layout-gap: 0.5rem;
-		--grid-column-count: 3;
-		--grid-item--min-width: 22rem;
-		// .singleTile {
-		// 	// background-color: variables.$yellowOpaque;
-		// 	// color: variables.$blueDark;
-		// }
-	}
-}
-
-.single-page {
-	// TO DO: make sure the nav etc is sticky
-	height: 100%;
-	width: 100%;
-}
-.singleTile {
-	display: inline-block;
 }
 
 .buttonContainer {
 	position: relative;
 	top: 0;
 	margin: 1rem;
-	// left: 20px;
-	// right: 20px;
+
 	button {
 		font-size: typog.$textSize;
 		width: 100%;
 		padding: 0.3rem;
-		// margin: 0.5rem;
+		// margin: 0.5rem; // do not add this back it's really annoying to debug
 		border: 1px solid transparent;
 		background-color: variables.$tealMedium;
 		color: variables.$pinkLight;
@@ -264,48 +182,132 @@ button :focus {
 	outline: 1px solid white;
 }
 
-// TO DO: figure out how to do something non-obnoxious with the button on focus/over
-// .buttonContainer:hover {
-// 	animation: wiggle 1s;
-// 	animation-iteration-count: infinite;
-// }
-// @keyframes wiggle {
-// 	0% {
-// 		transform: translate(1px, 1px);
-// 	}
-// 	50% {
-// 		transform: translate(0px, -1px);
-// 	}
-// 	100%{
-// 		transform: translate(1px, 1px);
-// 	}
-// }
+//
+.projects {
+	--grid-layout-gap: 10px;
+	--grid-column-count: 1;
+	--grid-item--min-width: 16rem;
+
+	/** css-tricks! https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/ * Calculated values.   */
+	--gap-count: calc(var(--grid-column-count) - 1);
+	--total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+	--grid-item--max-width: calc(
+		(100% - var(--total-gap-width)) / var(--grid-column-count)
+	);
+
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(
+			max(var(--grid-item--min-width), var(--grid-item--max-width)),
+			1fr
+		)
+	);
+	grid-gap: var(--grid-layout-gap);
+	.singleTile {
+		border: solid 1px variables.$pinkPale;
+		background: linear-gradient(
+			-180deg,
+			variables.$tealPale,
+			variables.$tealDark
+		);
+		color: variables.$pinkPale;
+	}
+	.singleTile:hover {
+		transform: scale(1.07);
+		transition: transform 0.2s ease;
+		button {
+			background-color: variables.$pinkLight;
+			color: variables.$tealMedium;
+		}
+		z-index: 10;
+	}
+	img,
+	.summary {
+		width: calc(99% - 2rem);
+		// width: 99%;
+		margin: 0 1rem;
+	}
+	img {
+		margin: 0;
+		width: 100%;
+		// clip-path: circle(40%);
+		clip-path: inset(3% 3% 3% 3%);
+	}
+
+	@media (min-width: media.$breakpoint-small) {
+		//   background-color: #87ceeb;
+		// width: 95%;
+		--grid-layout-gap: 0.5rem;
+		--grid-column-count: 1;
+		--grid-item--min-width: 18rem;
+	}
+	@media (min-width: media.$breakpoint-medium) {
+		//   background-color: #87ceeb;
+		width: 95%;
+		--grid-layout-gap: 0.5rem;
+		--grid-column-count: 1;
+		--grid-item--min-width: 20rem;
+	}
+
+	@media (min-width: media.$breakpoint-large) {
+		//   background-color: #87ceeb;
+		width: 80%;
+		--grid-layout-gap: 0.5rem;
+		--grid-column-count: 1;
+		--grid-item--min-width: 22rem;
+	}
+}
+
+.single-page {
+	height: 100%;
+	width: 100%;
+	.singleProject{
+		padding: 1rem 1rem 3rem 1rem;
+	}
+	.projectPicture{
+		width: calc(99% - 2rem);
+		// width: 99%;
+		margin: 0 1rem;
+	}
+}
+.singleTile {
+	display: inline-block;
+}
 
 // TO DO:
-// make tiles-container responsive (media queries),
-// make it a variable of some sort so I can use it again
+// DONE make tiles-container responsive (media queries),
+// ?? make it a variable of some sort so I can use it again
 // DONE: take out the lovely borders lol
-// also consider how I would make a grid?
+// DONE: also consider how I would make a grid?
 // add skip to link functionality for real
 
 #site-navigation {
-	// position relative to bottom or top is NECESSARY
+	// position top or position bottom is NECESSARY
 	width: 100%;
 	height: 2.5rem;
 	position: fixed;
 	bottom: 0px;
 	background-color: variables.$blueDark;
+	z-index: 1000;
+	@media (min-width: media.$breakpoint-medium) {
+		width: calc(50% - 20rem);
+	}
 }
 
-.pageUL {
-	display: flex;
-	flex-direction: row;
-	position: fixed;
-	// margin: 0 auto;
-	// width: 100%;
-	bottom: 2rem;
-	li {
-		list-style: none;
+// add media query here for medium+ screen nav
+
+footer {
+	position: relative;
+	padding: 0 4rem;
+	margin: 0;
+	ul {
+		display: flex;
+		justify-content: space-around;
+		padding: 0;
+		li {
+			list-style: none;
+		}
 	}
 }
 
