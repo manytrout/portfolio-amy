@@ -13,7 +13,7 @@ function App() {
 	return (
 		<div className="App">
 			<BrowserRouter path="/">
-				<Header title="Amy Turton" />
+				<Header title="Amy Turton"/>
 				{/* DONE: add a check on slugs so that page not found works as it should
 					TO DO: add hash link so it can be parallax */}
 				{/* <Route path="/about" element={<About />} /> */}
