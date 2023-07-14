@@ -39,6 +39,7 @@ const posts = [
 		details: (
 			<div className="details">
 				<hr />
+				<div className="section1">
 				<h3 className="projectOverview">Overview</h3>
 				<p className="projectOverview">
 					Buzz Off! is a Whack-a-Mole style game that I wrote in
@@ -68,6 +69,7 @@ const posts = [
 					But then I'd find a bug. Rinse and repeat. In hindsight it's
 					kind of funny but it was pretty frustrating at the time.
 				</p>
+				</div>
 				<hr />
 				<h3 className="projectChallenges">Challenges</h3>
 				<div className="challengeDetails">
@@ -231,7 +233,7 @@ const posts = [
 		body: (
 			<div className="summary">
 				<p>
-					A wordpres-driven website for Amazalia Acrescapers.
+					A WordPress-driven website for Amazalia Acrescapers.
 					{/* a landscaping and garden maintenance company providing
 					services on Hawai'i (aka The Big Island). */}
 				</p>
@@ -269,24 +271,29 @@ const posts = [
 		titleImageAltText: "flowersssss",
 	},
 	{
-		slug: "short-sample",
+		slug: "portfolio",
 		projectType: "assignment",
-		title: "Short Sample For Testing",
+		title: "My Portfolio",
 		body: (
 			<div className="summary">
-				<p>A short sample</p>
+				<p>
+					This is where I plan to keep track of what I learn 
+				</p>
 			</div>
 		),
 		details: (
 			<div className="details">
-				<p className="planning">Short planning sample</p>
-				<p className="working">short working sample</p>
+				<p className="planning">
+					Lots of winging it! I wanted to spend more time using React so that's what I decided right off the bat. I decided to keep using Create React App MORE DETAILS GO HERE
+				</p>
+				<p className="working">
+					
+				</p>
 				<p className="challenges"></p>
 			</div>
 		),
-		// ,
-		// titleImage: project_titleImage,
-		// titleImageAltText: "flowersssss",
+		titleImage: project_titleImage,
+		titleImageAltText: "flowersssss",
 	},
 	//
 	// TEMPLATE for projectData record

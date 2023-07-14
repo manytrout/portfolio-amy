@@ -24,8 +24,9 @@ code {
 	font-family: "Courier Prime", "Courier New", monospace;
 	border: 1px solid transparent;
 	border-radius: 3px;
-	background-color: rgb(0, 0, 0);
+	background-color: variables.$peachSubdued;
 	padding: 3px;
+	color: black;
 }
 
 a {
@@ -42,12 +43,9 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-	text-decoration: underline solid variables.$pinkDark;
+	text-decoration: underline;
 }
 
-// a:focus {
-// 	outline: 1px solid white;
-// }
 
 a:hover {
 	cursor: pointer;
@@ -91,7 +89,10 @@ body {
 }
 body {
 	min-height: 100vh;
-	color: #fff6f6;
+	// color: #fff6f6;
+	// color: #dcd9ce;
+	// color: #c9e7e5;
+	color: variables.$tealBrightPale;
 	background-color: #333355;
 	background-image: variables.$spaceBackground;
 	background-attachment: fixed;
@@ -120,25 +121,25 @@ body {
 main {
 	width: 100%;
 	padding: 0;
+	margin: 1rem auto;
 	@media (min-width: media.$breakpoint-medium) {
-		// width: calc(90% - 20rem);
-		width: 90%;
-		padding-left: 10rem;
-		padding-right: 1rem;
+		width: calc(90% - 20rem);
+		// width: 85%;
+		// padding-left: 10rem;
+		// padding-right: 1rem;
 	}
 	@media (min-width: media.$breakpoint-large) {
 		// width: calc(90% - 20rem);
 		width: 80%;
-		padding-left: 17rem;
-		padding-right: 1rem;
+		// max-width: 65rem;
+		// padding-left: 17rem;
+		// padding-right: 1rem;
 	}
 	@media (min-width: media.$breakpoint-large) {
 		// width: calc(90% - 20rem);
-		max-width: 80rem;
-		padding-left: 17rem;
-		padding-right: 1rem;
+		max-width: 90rem;
+		// margin: 0 auto;
 	}
-
 }
 
 // to prevent either of these items from being too wide
@@ -153,15 +154,22 @@ main {
 	top: 0;
 	margin: 1rem;
 
+	// width: 100%;
+
 	button {
 		font-size: typog.$textSize;
-		width: 100%;
+		text-align: center;
+		min-width: 100%;
+		max-width: inherit;
 		height: 4.4rem;
-		padding: 0.3rem;
-		// margin: 0.5rem; // do not add this back it's really annoying to debug
+		padding: 0.3rem 4rem;
 		border: 1px solid transparent;
+		border-radius: 6px;
+		// margin: 0.5rem; // do not add this back it's really annoying to debug
+		// border: 1px solid transparent;
 		background-color: variables.$tealMedium;
-		color: variables.$pinkLight;
+		color: variables.$tealBright;
+		// color: #8cd2cd;
 		cursor: pointer;
 		animation: ping-surge 1.3s ease-in-out infinite;
 		animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
@@ -169,26 +177,19 @@ main {
 
 	@keyframes ping-surge {
 		50% {
-			box-shadow: -1px 0px variables.$tealMediumSemiTransparent,
-				1px 0px variables.$tealMediumSemiTransparent,
-				0px -1px variables.$tealMediumSemiTransparent,
-				1px 0px variables.$tealMediumSemiTransparent;
+			box-shadow: -2px 0px variables.$tealMedium,
+				2px 0px variables.$tealMedium, 0px -2px variables.$tealMedium,
+				2px 0px variables.$tealMedium;
 		}
-		// 25% {
-		// 	box-shadow: 2px 0px teal, -2px 0px teal;
-		// }
 	}
 }
-// button :focus {
-// 	// border: variables.$lilacPartlyTransparent;
-// 	// outline: 1px solid white;
-// }
 
 //
 .projects {
-	--grid-layout-gap: 10px;
+	--grid-layout-gap: 1rem;
 	--grid-column-count: 1;
-	--grid-item--min-width: 16rem;
+	--grid-item--min-width: 15rem;
+	// --grid-item--min-width: calc(15rem);
 
 	/** css-tricks! https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/ * Calculated values.   */
 	--gap-count: calc(var(--grid-column-count) - 1);
@@ -207,20 +208,42 @@ main {
 	);
 	grid-gap: var(--grid-layout-gap);
 	.singleTile {
-		border: solid 1px variables.$blueGreyOpaquePale;
-		background: linear-gradient(
-			-180deg,
-			variables.$tealPale,
-			variables.$tealMedium
-		);
+		border: solid 1px variables.$blueGreySemiOpaque;
+		// background: linear-gradient(
+		// 	-180deg,
+		// 	variables.$purpleMediumDark,
+		// 	variables.$purpleVeryDark
+		// );
+		margin: 1rem;
+		background-color: variables.$blueGreyOpaqueDarker;
+		box-shadow: 5px 4px 0px 0px rgba(0, 0, 0, 1);
+
 		color: variables.$pinkPale;
+		button {
+			min-height: calc(line-height * 2);
+		}
+		.projectText{
+			background-color: variables.$blueGreyOpaqueDarker;
+		}
 	}
 	.singleTile:hover {
-		transform: scale(1.03);
+		transform: scale(1.02);
 		transition: transform 0.2s ease;
 		button {
-			background-color: variables.$pinkLight;
+			// background-color: variables.$pinkLight;
+			background-color: variables.$tealBright;
+			// background-color:#8cd2cd ;
 			color: variables.$tealMedium;
+			transform: scale(1.2);
+			transition: transform 0.2s ease;
+		}
+		@keyframes ping-surge {
+			50% {
+				box-shadow: -1px 0px variables.$tealMedium,
+					1px 0px variables.$tealMedium,
+					0px -1px variables.$tealMedium,
+					1px 0px variables.$tealMedium;
+			}
 		}
 		z-index: 10;
 	}
@@ -258,33 +281,44 @@ main {
 		--grid-layout-gap: 0.5rem;
 		--grid-column-count: 2;
 		--grid-item--min-width: 22rem;
+		margin: 0 auto;
 	}
 }
 
 .single-page {
 	height: 100%;
 	width: 100%;
-	.singleProject{
+	.singleProject {
 		padding: 1rem 1rem 3rem 1rem;
 		// border: solid 1px red;
 		background-color: variables.$blueGreyOpaqueDarker;
+		box-shadow: 5px 4px 0px 0px rgba(0, 0, 0, 1);
+
 	}
-	.projectPicture{
+
+	.projectTitle {
+		font-size: 1.9;
+	}
+	.projectPicture {
 		width: calc(99% - 2rem);
 		// width: 99%;
 		margin: 0 1rem;
 	}
-	.projectSnapshot{
+	.projectSnapshot {
 		// make this better
 		width: calc(49% - 2rem);
 		padding: 2rem;
+	}
+	.section1 {
+		background-color: variables.$greyAlmostTransparent;
+		padding: 1rem;
 	}
 }
 .singleTile {
 	margin: 1rem;
 	display: inline-block;
 	h2 {
-		text-align: right;
+		margin-left: 1rem;
 	}
 }
 
@@ -301,10 +335,22 @@ main {
 	height: 2.5rem;
 	position: fixed;
 	bottom: 0px;
-	background-color: variables.$blueDark;
+	background-color: variables.$blueGreyOpaqueDarker;
 	z-index: 1000;
 	@media (min-width: media.$breakpoint-medium) {
-		width: calc(50% - 20rem);
+		padding: 2rem 3rem 2rem 1rem;
+		width: 1rem;
+		writing-mode: vertical-lr;
+		height: -moz-fit-content;
+		height: fit-content;
+		// TO DO: check if this is what i want when i add more  items to menu
+		:hover {
+			transform: scale(1.02);
+			transition: transform 0.2s ease;
+			a {
+				text-decoration: underline;
+			}
+		}
 	}
 }
 
