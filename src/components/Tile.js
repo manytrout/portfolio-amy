@@ -24,16 +24,16 @@ Consider: https://css-tricks.com/breakout-buttons/
 				src={titleImage}
 				alt={titleImageAltText}
 			/>
-			<div className="projectText">
-				<div className="projectTitle">{title}</div>
-				<div className="projectBody">{body}</div>
-			</div>
 			<CallToAction
-				className="CTA"
+				className="CTA glow-button"
 				slug={slug}
 				hardText="more about"
 				variableText={title}
 			/>
+			<div className="projectText">
+				<h2 className="projectTitle">{title}</h2>
+				<div className="projectBody">{body}</div>
+			</div>
 		</div>
 	);
 }

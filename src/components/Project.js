@@ -1,7 +1,6 @@
 
 import CallToAction from "./CallToAction";
 
-
 function Project({
 	slug,
 	title,
@@ -31,16 +30,16 @@ function Project({
 					alt={titleImageAltText}
 				/>
 				{/* TO DO: add the commented out extra images to somewhere specific maybe*/}
-				{/* <img
-				className="projectPicture projectDetail01"
+				<img
+				className="projectSnapshot projectDetail01"
 				src={detailImage01}
 				alt={detailImage01AltText}
 			/>
 			<img
-				className="projectPicture projectDetail02"
+				className="projectSnapshot projectDetail02"
 				src={detailImage02}
 				alt={detailImage02AltText}
-			/> */}
+			/>
 
 				{/* DONE: fix slug so it doesn't bring me to the bottom of the home page */}
 				<CallToAction
