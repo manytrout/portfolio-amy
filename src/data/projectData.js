@@ -28,10 +28,11 @@ const posts = [
 			<div className="summary">
 				<div>
 					<p>
-						Buzz Off! is the very first web app that I designed on
-						my own. It's a Whack-a-Mole type browser game that I
+						{/* Buzz Off! is  */}
+						The very first web app that I designed on my own.
+						{/* It's a Whack-a-Mole type browser game that I
 						wrote in vanilla JavasScript over the course of a few
-						weeks.
+						weeks. */}
 					</p>
 				</div>
 			</div>
@@ -81,6 +82,8 @@ const posts = [
 						HTML as needed. Those two choices made it much easier
 						for me to follow the data flow when I hit issues.
 					</p>
+					<script src="https://gist.github.com/manytrout/245776fc5eadaea59c9c60d4b9e88268.js"></script>
+					<script>window.alert('yo')</script>
 				</div>
 				<p className="learningOutcomes">
 					At the end of this project I was much more comfortable with
@@ -109,9 +112,10 @@ const posts = [
 		body: (
 			<div className="summary">
 				<p>
-					A movie look-up app that calls the TMDb API to display movie
+					A movie look-up app made in React.
+					{/* that calls the TMDb API to display movie
 					posters, reviews, genres, and sorting options. This was a
-					pair project developed with Kassandra Haftner.
+					pair project developed with Kassandra Haftner. */}
 				</p>
 			</div>
 		),
@@ -162,10 +166,11 @@ const posts = [
 		body: (
 			<div className="summary">
 				<p>
-					Calculator made in React, including memory buttons, square
+					Calculator made in React!
+					{/* including memory buttons, square
 					root, and other functions. Strictly speaking, this was a
 					small assignment buuuuttt it was a lot of fun and it's when
-					React started to click for me.
+					React started to click for me. */}
 				</p>
 			</div>
 		),
@@ -197,15 +202,15 @@ const posts = [
 		titleImageAltText: "A screenshot of my calculator app",
 	},
 	{
-		slug: "capstone",
+		slug: "amazilia-acrescapers",
 		projectType: "assignment",
 		title: "Amazilia Acrescapers",
 		body: (
 			<div className="summary">
 				<p>
-					A wordpres-driven website for Amazalia Acrescapers, a
-					landscaping and garden maintenance company providing
-					services on Hawai'i (aka The Big Island).
+					A wordpres-driven website for Amazalia Acrescapers.
+					{/* a landscaping and garden maintenance company providing
+					services on Hawai'i (aka The Big Island). */}
 				</p>
 			</div>
 		),
@@ -239,6 +244,26 @@ const posts = [
 		),
 		titleImage: project_titleImage,
 		titleImageAltText: "flowersssss",
+	},
+	{
+		slug: "short-sample",
+		projectType: "assignment",
+		title: "Short Sample For Testing",
+		body: (
+			<div className="summary">
+				<p>A short sample</p>
+			</div>
+		),
+		details: (
+			<div className="details">
+				<p className="planning">Short planning sample</p>
+				<p className="working">short working sample</p>
+				<p className="challenges"></p>
+			</div>
+		),
+		// ,
+		// titleImage: project_titleImage,
+		// titleImageAltText: "flowersssss",
 	},
 	//
 	// TEMPLATE for projectData record

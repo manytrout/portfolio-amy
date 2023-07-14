@@ -4,10 +4,12 @@ import Project from "./Project";
 function Projects() {
 	let posts = getPosts();
 	return (
-		<div className="longproject-container">
+		<div className="projects-container">
+			<div className="accordion">
 			{posts.map((singleProject, i) => {
 				return <Project key={i} {...singleProject} />;
 			})}
+			</div>
 		</div>
 	);
 }

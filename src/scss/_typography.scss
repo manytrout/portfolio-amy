@@ -15,3 +15,6 @@ h6 {
 body {
     line-height: 1.5;
 }
+
+$textSize: calc(10px + 1.2vmin);
+	// the calc above, with 1.6vmin, seems like close enough to the right balance for now

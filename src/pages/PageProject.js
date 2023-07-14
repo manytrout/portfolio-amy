@@ -1,23 +1,29 @@
+import {useState} from "react";
 import {useEffect} from "react";
-import {Link, Navigate, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import Project from "../components/Project";
-import { getPost } from "../data/projectData";
+import {getPost} from "../data/projectData";
+import PageNotFound from "./PageNotFound";
 
 function PageProject() {
 	let {slug} = useParams();
+	const [data, setData] = useState();
 
 	useEffect(() => {
 		document.title = `${slug}`;
+		setData(getPost(slug));
 	}, [slug]);
 
-    let data = getPost(slug)
+	document.title = `${slug}`;
 
-    document.title = `${slug}`;
-
-	return (
-		<main className="single-project-page-container">
-			<Project {...data} />
-		</main>
-	);
+	if (data) {
+		return (
+			<main className="single-page single-project-page-container">
+				<Project {...data} />
+			</main>
+		);
+	} else {
+		return <PageNotFound />;
+	}
 }
 export default PageProject;

@@ -8,7 +8,7 @@ const PageNotFound = () => {
 
 	return (
 		<main>
-			<section className="page-not-found-section">
+			<section className="single-page">
 				<h2>404 ... : (</h2>
 				<p>Page not found.</p>
 				<p>

@@ -1,59 +1,52 @@
-@use "./media";
-@use "./typography";
-@use "./variables" as portfolio;
+@use "./media" as media;
+@use "./typography" as typog;
+@use "./variables" as variables;
 
 /* for testing: */
 
 // main {
 // 	@include media.min-width(small) {
-// 		// background: yellow;
+// 		background: yellow;
 
 // 	}
-// 	@include media.min-width(medium) {
-// 		// background: red;
+// @include media.min-width(medium) {
+// 		background: red;
 // 	}
 
 // 	@include media.min-width(large) {
-// 		// background: green;
+// 		background: green;
 // 	}
 // }
 
 /* */
 
-// body {
-// 	margin: 0;
-// 	font-family: "Maven Pro", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-// 		"Helvetica Neue", sans-serif;
-// 	-webkit-font-smoothing: antialiased;
-// 	-moz-osx-font-smoothing: grayscale;
-// }
-
 code {
 	font-family: "Courier Prime", "Courier New", monospace;
 	border: 1px solid transparent;
 	border-radius: 3px;
-	background-color: rgb(160, 160, 160);
+	background-color: rgb(123, 140, 158);
 }
 
 a {
-	// display: block; // wtf why was this a block
-	padding: 6px 12px;
 	text-decoration: none;
-	color: portfolio.$pinkLight;
+	color: variables.$pinkLight;
+	display: inline-block;
+	width: fit-content;
 }
+
 a:visited {
-	color: portfolio.$pinkMedium;
+	color: variables.$pinkMedium;
 }
 
 a:hover,
 a:focus,
 a:active {
-	text-decoration: underline solid portfolio.$pinkDark;
+	text-decoration: underline solid variables.$pinkDark;
 }
 
-a:focus {
-	outline: 1px solid white;
-}
+// a:focus {
+// 	outline: 1px solid white;
+// }
 
 a:hover {
 	cursor: pointer;
@@ -77,26 +70,33 @@ nav {
 	z-index: 999;
 	padding: 1em;
 	background-color: white;
-	color: portfolio.$blueDark;
+	color: variables.$blueDark;
 	opacity: 0;
 }
 .skip-link:focus {
 	left: 50%;
 	transform: translateX(-50%);
 	opacity: 1;
-	color: portfolio.$blueDark;
+	color: variables.$blueDark;
 	font-size: 1.2em;
 	outline: none;
 }
 //
+
 html,
 body {
 	margin: 0;
 	padding: 0;
 }
 body {
-	height: 100vh;
-	width: 100%;
+	min-height: 100vh;
+	color: #fff6f6;
+	background-color: #333355;
+	background-image: variables.$spaceBackground;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* background by SVGBackgrounds.com */
 }
 * {
 	box-sizing: border-box;
@@ -105,132 +105,210 @@ body {
 .App {
 	height: 100%;
 	width: 100%;
-	display: flex;
-	// flex-wrap: wrap;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	text-align: center;
-	font-size: calc(10px + 1.2vmin);
+	font-size: typog.$textSize;
+	// calc(10px + 1.2vmin);
 	// the calc above, with 1.6vmin, seems like close enough to the right balance for now
-	color: #fff6f6;
-	background-color: #333355;
-	background-image: portfolio.$spaceBackground;
-	background-attachment: fixed;
+	// color: #fff6f6;
+	// background-color: #333355;
+	// background-image: variables.$spaceBackground;
+	// background-attachment: fixed;
+	// background-repeat: no-repeat;
 	// background-size: cover;
+	// /* background by SVGBackgrounds.com */
+}
+main {
 	width: 100%;
-	background-repeat: repeat;
-	/* background by SVGBackgrounds.com */
+	padding: 0;
+	@media (min-width: media.$breakpoint-medium) {
+		// width: calc(90% - 20rem);
+		width: 90%;
+		padding-left: 10rem;
+		padding-right: 1rem;
+	}
+	@media (min-width: media.$breakpoint-large) {
+		// width: calc(90% - 20rem);
+		width: 80%;
+		padding-left: 17rem;
+		padding-right: 1rem;
+	}
+	@media (min-width: media.$breakpoint-large) {
+		// width: calc(90% - 20rem);
+		max-width: 80rem;
+		padding-left: 17rem;
+		padding-right: 1rem;
+	}
+
 }
 
-/* accordion functionality from https://dev.to/sababg/css-only-accordion-59db */
-input {
-	position: absolute;
-	opacity: 0;
-	z-index: -1;
+// to prevent either of these items from being too wide
+.aboutMe,
+.projects {
+	width: 100%;
+	padding: 0 1rem;
 }
-.accordion {
-	margin: 10px;
-	border-radius: 5px;
-	overflow: hidden;
-	box-shadow: 0 4px 4px -2px portfolio.$greyAlmostTransparent;
-}
-.accordion-label {
-	font-size: 1.5rem;
-	padding: 0.3rem 1rem;
-	border: 1px solid;
-	border-color: transparent;
-	background-color: portfolio.$tealMedium;
-	color: portfolio.$pinkLight;
-	cursor: pointer;
-	animation: ping-surge 2.5s infinite ease-in-out;
-}
-@keyframes ping-surge {
-	0% {
-		box-shadow: 0 0 0 0px portfolio.$yellowPartlyTransparent;
-	}
-	50% {
-		box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
-	}
-	100% {
-		box-shadow: 0 0px 0px 0px portfolio.$yellowPartlyTransparent;
-	}
-}
-.accordion-content {
-	max-height: 0;
-	padding: 0 1em;
-	// background: portfolio.$blueDark;
-	background-color: portfolio.$lilacTransparent;
-	transition: all 0.35s;
-}
-input:checked ~ .accordion-content {
-	max-height: 100vh;
-	padding: 1em;
-}
-
-/* accordion functionality from https://dev.to/sababg/css-only-accordion-59db */
-
 
 .buttonContainer {
-	padding: 1rem;
+	position: relative;
+	top: 0;
+	margin: 1rem;
+
 	button {
-		font-size: 1.5rem;
-		padding: 0.3rem 1rem;
-		border: 1px solid;
-		border-color: transparent;
-		background-color: portfolio.$tealMedium;
-		color: portfolio.$pinkLight;
+		font-size: typog.$textSize;
+		width: 100%;
+		padding: 0.3rem;
+		// margin: 0.5rem; // do not add this back it's really annoying to debug
+		border: 1px solid transparent;
+		background-color: variables.$tealMedium;
+		color: variables.$pinkLight;
 		cursor: pointer;
-		animation: ping-surge 2.5s infinite ease-in-out;
+		animation: ping-surge 1.8s infinite;
+		animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
 	}
+
 	@keyframes ping-surge {
-		0% {
-			box-shadow: 0 0 0 0px portfolio.$yellowPartlyTransparent;
-		}
 		50% {
-			box-shadow: 0 0 2px 1px portfolio.$yellowPartlyTransparent;
+			box-shadow: -1px 0px variables.$tealMediumSemiTransparent,
+				1px 0px variables.$tealMediumSemiTransparent,
+				0px -1px variables.$tealMediumSemiTransparent,
+				1px 0px variables.$tealMediumSemiTransparent;
 		}
-		100% {
-			box-shadow: 0 0px 0px 0px portfolio.$yellowPartlyTransparent;
+		// 25% {
+		// 	box-shadow: 2px 0px teal, -2px 0px teal;
+		// }
+	}
+}
+button :focus {
+	// border: variables.$lilacPartlyTransparent;
+	outline: 1px solid white;
+}
+
+//
+.projects {
+	--grid-layout-gap: 10px;
+	--grid-column-count: 1;
+	--grid-item--min-width: 16rem;
+
+	/** css-tricks! https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/ * Calculated values.   */
+	--gap-count: calc(var(--grid-column-count) - 1);
+	--total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+	--grid-item--max-width: calc(
+		(100% - var(--total-gap-width)) / var(--grid-column-count)
+	);
+
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(
+			max(var(--grid-item--min-width), var(--grid-item--max-width)),
+			1fr
+		)
+	);
+	grid-gap: var(--grid-layout-gap);
+	.singleTile {
+		border: solid 1px variables.$pinkPale;
+		background: linear-gradient(
+			-180deg,
+			variables.$tealPale,
+			variables.$tealDark
+		);
+		color: variables.$pinkPale;
+	}
+	.singleTile:hover {
+		transform: scale(1.07);
+		transition: transform 0.2s ease;
+		button {
+			background-color: variables.$pinkLight;
+			color: variables.$tealMedium;
 		}
+		z-index: 10;
+	}
+	img,
+	.summary {
+		width: calc(99% - 2rem);
+		// width: 99%;
+		margin: 0 1rem;
+	}
+	img {
+		margin: 0;
+		width: 100%;
+		// clip-path: circle(40%);
+		clip-path: inset(3% 3% 3% 3%);
 	}
 
-	.ctaButton:hover {
-		// background-color: #a85565;
-		background-color: portfolio.$tealMedium;
+	@media (min-width: media.$breakpoint-small) {
+		//   background-color: #87ceeb;
+		// width: 95%;
+		--grid-layout-gap: 0.5rem;
+		--grid-column-count: 1;
+		--grid-item--min-width: 18rem;
+	}
+	@media (min-width: media.$breakpoint-medium) {
+		//   background-color: #87ceeb;
+		width: 95%;
+		--grid-layout-gap: 0.5rem;
+		--grid-column-count: 1;
+		--grid-item--min-width: 20rem;
+	}
+
+	@media (min-width: media.$breakpoint-large) {
+		//   background-color: #87ceeb;
+		width: 80%;
+		--grid-layout-gap: 0.5rem;
+		--grid-column-count: 1;
+		--grid-item--min-width: 22rem;
 	}
 }
 
-.projects-container {
-	border: solid blue 1px;
-	.accordion {
-		border: dotted red 2px;
-		.singleTile {
-			margin: 0 auto;
-			width: 18rem;
-			border: dashed yellow 1px;
-			img {
-				border: dotted white 1px;
-				width: 90%;
-				max-width: 19rem;
-			}
-		}
+.single-page {
+	height: 100%;
+	width: 100%;
+	.singleProject{
+		padding: 1rem 1rem 3rem 1rem;
+	}
+	.projectPicture{
+		width: calc(99% - 2rem);
+		// width: 99%;
+		margin: 0 1rem;
 	}
 }
-// TO DO: 
-// make projects-container responsive (media queries), 
-// make it a variable of some sort so I can use it again
-// take out the lovely borders lol
-// also consider how I would make a grid?
+.singleTile {
+	display: inline-block;
+}
 
+// TO DO:
+// DONE make tiles-container responsive (media queries),
+// ?? make it a variable of some sort so I can use it again
+// DONE: take out the lovely borders lol
+// DONE: also consider how I would make a grid?
+// add skip to link functionality for real
 
 #site-navigation {
-	// position relative to bottom or top is NECESSARY
+	// position top or position bottom is NECESSARY
 	width: 100%;
 	height: 2.5rem;
-	position: sticky;
+	position: fixed;
 	bottom: 0px;
-	background-color: portfolio.$blueDark;
+	background-color: variables.$blueDark;
+	z-index: 1000;
+	@media (min-width: media.$breakpoint-medium) {
+		width: calc(50% - 20rem);
+	}
+}
+
+// add media query here for medium+ screen nav
+
+footer {
+	position: relative;
+	padding: 0 4rem;
+	margin: 0;
+	ul {
+		display: flex;
+		justify-content: space-around;
+		padding: 0;
+		li {
+			list-style: none;
+		}
+	}
 }
 
 /* style outline from Jonathon */
@@ -251,3 +329,150 @@ input:checked ~ .accordion-content {
 	- Main
 	- Footer
 --------------------------------------------------------------*/
+/* STYLES DRAFT Elements. TO DO: remove everything that's commented out below this */
+
+// .buttonContainer {
+// 	margin: 1rem auto;
+// 	button {
+// 		font-size: 1.5rem;
+// 		padding: 0.3rem 1rem;
+// 		margin: 0.5rem;
+// 		border: 1px solid;
+// 		border-color: transparent;
+// 		background-color: variables.$tealMedium;
+// 		color: variables.$pinkLight;
+// 		cursor: pointer;
+// 		animation: ping-surge 1.8s infinite ease-in-out;
+// 		a {
+// 			object-fit: 100%; // TO DO: figure out why this goes beyond the container bounds
+// 		}
+// 	}
+
+// 	@keyframes ping-surge {
+// 		0% {
+// 			// box-shadow: 0 0 2px 0px variables.$yellowPartlyTransparent;
+// 			box-shadow: 0 0 1px 1px variables.$yellowPartlyTransparent;
+// 		}
+// 		// 15% {
+// 		// 	box-shadow: 0 0 2px 1px variables.$yellowPartlyTransparent;
+// 		// }
+// 		// 25% {
+// 		// 	box-shadow: 0 0 4px 1px variables.$yellowPartlyTransparent;
+// 		// }
+// 		// 50% {
+// 		// 	box-shadow: 0 0 6px 2px variables.$yellowPartlyTransparent;
+// 		// }
+// 		// 75% {
+// 		// 	box-shadow: 0 0 4px 1px variables.$yellowPartlyTransparent;
+// 		// }
+// 		// 85% {
+// 		// 	box-shadow: 0 0 2px 1px variables.$yellowPartlyTransparent;
+// 		// }
+// 		100% {
+// 			box-shadow: 0 0px 3px 2px variables.$yellowPartlyTransparent;
+// 		}
+// 	}
+// //
+
+// .tiles-container {
+// 	border: solid blue 1px;
+// 	// border: transparent;
+// 	.accordion {
+// 		// border: dotted red 2px;
+// 		margin: 2rem;
+// 		// border: transparent;
+// 		.singleTile {
+// 			margin: 0;
+// 			width: 18rem;
+// 			border: dashed yellow 1px;
+// 			// border: transparent;
+// 			img {
+// 				// border: dotted white 1px;
+// 				width: 90%;
+// 				max-width: 19rem;
+// 			}
+// 			button {
+// 				width: 100%;
+// 				position:relative;
+// 				bottom: 0;
+// 				left: 0;
+// 				padding: 0;
+// 				margin: 0;
+// 			}
+// 		}
+// 	}
+// }
+// //
+// /* accordion functionality from https://dev.to/sababg/css-only-accordion-59db */
+// // TO DO: research how to make this keyboard friendly
+// input {
+// 	position: absolute;
+// 	opacity: 0;
+// 	z-index: -1;
+// }
+// .accordion {
+// 	margin: 10px;
+// 	border-radius: 5px;
+// 	overflow: hidden;
+// 	box-shadow: 0 4px 4px -2px variables.$greyAlmostTransparent;
+// }
+// .accordion-label {
+// 	font-size: 1.5rem;
+// 	padding: 0.3rem 1rem;
+// 	border: 1px solid;
+// 	border-color: transparent;
+// 	background-color: variables.$tealMedium;
+// 	color: variables.$pinkLight;
+// 	cursor: pointer;
+// 	animation: ping-surge 2.5s infinite ease-in-out;
+// }
+// @keyframes ping-surge {
+// 	0% {
+// 		box-shadow: 0 0 0 0px variables.$yellowPartlyTransparent;
+// 	}
+// 	50% {
+// 		box-shadow: 0 0 2px 1px variables.$yellowPartlyTransparent;
+// 	}
+// 	100% {
+// 		box-shadow: 0 0px 0px 0px variables.$yellowPartlyTransparent;
+// 	}
+// }
+// .accordion-content {
+// 	max-height: 0;
+// 	padding: 0 1em;
+// 	// background: variables.$blueDark;
+// 	background-color: variables.$lilacTransparent;
+// 	transition: all 0.35s;
+// }
+// input:checked ~ .accordion-content {
+// 	max-height: 100vh;
+// 	padding: 1em;
+// 	// border: 1px dashed yellow;
+// }
+
+// /* accordion functionality from https://dev.to/sababg/css-only-accordion-59db */
+
+/* more crap */
+// margin: 0 .5rem;
+// width: calc(100vw - 1em);
+// width: 100%;
+
+// border: solid 1px yellow;
+/* comment this back in later
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	// thank u css-tricks!!
+	margin: 0 auto;
+	grid-gap: 0.4rem;
+	.singleTile {
+		margin: 0 auto;
+		// justify-items: center;
+		width: 17rem;
+		img,
+		p {
+			width: calc(99% - 1em);
+		}
+		// border: dashed 1px orange;
+	}
+	// end of comment this back in later 
+	*/

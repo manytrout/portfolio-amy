@@ -8,3 +8,4 @@ function PageProjects(){
     );
 }
 export default PageProjects;
+// TO DO: remove
