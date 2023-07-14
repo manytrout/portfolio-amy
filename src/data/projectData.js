@@ -29,8 +29,7 @@ const posts = [
 				<div>
 					<p>
 						{/* Buzz Off! is  */}
-						The very first web app that I designed on
-						my own. 
+						The very first web app that I designed on my own.
 						{/* It's a Whack-a-Mole type browser game that I
 						wrote in vanilla JavasScript over the course of a few
 						weeks. */}
@@ -83,6 +82,8 @@ const posts = [
 						HTML as needed. Those two choices made it much easier
 						for me to follow the data flow when I hit issues.
 					</p>
+					<script src="https://gist.github.com/manytrout/245776fc5eadaea59c9c60d4b9e88268.js"></script>
+					<script>window.alert('yo')</script>
 				</div>
 				<p className="learningOutcomes">
 					At the end of this project I was much more comfortable with
@@ -243,32 +244,27 @@ const posts = [
 		),
 		titleImage: project_titleImage,
 		titleImageAltText: "flowersssss",
-	},{
+	},
+	{
 		slug: "short-sample",
 		projectType: "assignment",
 		title: "Short Sample For Testing",
 		body: (
 			<div className="summary">
-				<p>
-					A short sample
-				</p>
+				<p>A short sample</p>
 			</div>
 		),
 		details: (
 			<div className="details">
-				<p className="planning">
-					Short planning sample
-				</p>
-				<p className="working">
-					short working sample
-				</p>
+				<p className="planning">Short planning sample</p>
+				<p className="working">short working sample</p>
 				<p className="challenges"></p>
 			</div>
-		)
+		),
 		// ,
 		// titleImage: project_titleImage,
 		// titleImageAltText: "flowersssss",
-	}
+	},
 	//
 	// TEMPLATE for projectData record
 	// {
