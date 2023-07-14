@@ -8,6 +8,7 @@ function PageHome() {
 			<div className="intro main-id">
 				<About className="#about" />
 			</div>
+			
 
 			<div className="projectsContainer">
 				<h2>My work</h2>
