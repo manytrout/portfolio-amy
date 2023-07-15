@@ -204,7 +204,6 @@ const posts = [
 		title: "React Calculator",
 		body: (
 			<div className="summary">
-				<h3 className="projectOverview">Overview</h3>
 				<p>
 					Calculator I made in React!
 					{/* including memory buttons, square
