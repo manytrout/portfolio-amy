@@ -99,15 +99,14 @@ main {
 	width: 100%;
 	padding: 0;
 	padding-left: 3rem;
-
-	margin: 1rem auto;
+	margin: 0 auto;
 	@media (min-width: media.$breakpoint-medium) {
-		width: calc(90% - 20rem);
+		width: 90%
 
 	}
 	@media (min-width: media.$breakpoint-large) {
 		// width: calc(90% - 20rem);
-		width: 80%;
+		width: 85%;
 
 	}
 	@media (min-width: media.$breakpoint-large) {
@@ -122,8 +121,24 @@ main {
 	width: 100%;
 	padding: 0 1rem;
 }
+.aboutMe{
+	padding: 1rem;
+	margin-top: 1rem;
+	margin-right: 2rem;
+	background-color: variables.$blueGreyOpaqueDarker;
+	box-shadow: 5px 4px 0px 0px rgba(0, 0, 0, 1);
+	max-width: 80rem;
+	@media (min-width: media.$breakpoint-small) {
+		width: 70%;
+		margin: 0 auto;
+	}
+	@media (min-width: media.$breakpoint-medium) {
+		width: 80%;
+		margin: 0 auto;
+	}
+}
 .intro {
-	padding: 21% 0;
+	padding: 1rem;
 }
 
 .codingFavourites {
@@ -133,11 +148,15 @@ main {
 .arrowContainer {
 	display: flex;
 	justify-content: center;
+	position: relative;
+	top: 0rem;
+	left: 0rem;
 	.arrow {
 		height: 4rem;
 		position: relative;
-		top: 90%;
-		animation: 1.9s linear infinite arrow-down;
+		bottom: 4rem;
+		left: 0rem;
+		animation: .9s linear infinite arrow-down;
 	}
 	@keyframes arrow-down {
 		from {
@@ -146,7 +165,7 @@ main {
 		}
 		to {
 			
-			transform: translateY(10rem);
+			transform: translateY(6rem);
 			fill: transparent;
 		}
 	}
@@ -154,15 +173,15 @@ main {
 .buttonContainer {
 	position: relative;
 	top: 0;
-	margin: 1rem;
+	margin: 1rem auto;
 
 	button {
 		font-size: typog.$textSize;
 		text-align: center;
-		min-width: 100%;
+		width: 100%;
 		max-width: inherit;
-		height: 4.4rem;
-		padding: 0.3rem 4rem;
+		height: 4rem;
+		// padding: 0.3rem 4rem;
 		border: 1px solid transparent;
 		border-radius: 6px;
 		// margin: 0.5rem; // do not add this back it's really annoying to debug
@@ -213,8 +232,12 @@ main {
 		box-shadow: 5px 4px 0px 0px rgba(0, 0, 0, 1);
 
 		color: variables.$pinkPale;
-		button {
-			min-height: calc(line-height * 2);
+		.buttonContainer {
+			display: flex;
+			justify-content: center;
+			button{
+				width: 100%;
+			}
 		}
 		.projectText {
 			background-color: variables.$blueGreyOpaqueDarker;
@@ -250,19 +273,16 @@ main {
 	img {
 		margin: 0;
 		width: 100%;
-		// clip-path: circle(40%);
 		clip-path: inset(3% 3% 3% 3%);
 	}
 
 	@media (min-width: media.$breakpoint-small) {
-		//   background-color: #87ceeb;
 		// width: 95%;
 		--grid-layout-gap: 0.5rem;
 		--grid-column-count: 1;
 		--grid-item--min-width: 18rem;
 	}
 	@media (min-width: media.$breakpoint-medium) {
-		//   background-color: #87ceeb;
 		width: 95%;
 		--grid-layout-gap: 0.5rem;
 		--grid-column-count: 1;
@@ -270,7 +290,6 @@ main {
 	}
 
 	@media (min-width: media.$breakpoint-large) {
-		//   background-color: #87ceeb;
 		width: 90%;
 		--grid-layout-gap: 0.5rem;
 		--grid-column-count: 2;
@@ -294,6 +313,7 @@ main {
 		}
 		@media (min-width: media.$breakpoint-medium) {
 			width: 80%;
+			max-width: 90rem;
 			margin: 0 auto;
 		}
 	}
@@ -306,11 +326,14 @@ main {
 		// width: 99%;
 		margin: 0 1rem;
 	}
+	.snapshotContainer{
+		display: flex;
+		justify-content: center;
 	.projectSnapshot {
 		// make this better
 		width: calc(49% - 2rem);
-		padding: 2rem;
-	}
+		padding: 1rem;
+	}}
 	.section1 {
 		background-color: variables.$greyAlmostTransparent;
 		padding: 1rem;
@@ -360,6 +383,7 @@ main {
 footer {
 	// position: relative;
 	padding: 4rem 1rem 3rem;
+	font-size: small;
 	// margin: 4rem 0 3rem;
 	ul {
 		display: flex;
