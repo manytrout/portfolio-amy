@@ -4,7 +4,9 @@ function Header(props) {
 			<a className="skip-link" href="#main-id">
 				Skip Navigation Links
 			</a>
-			<h1 className="title">{props.title}</h1>
+			<a href="https://amyturton.ca/">
+				<h1 className="title">{props.title}</h1>
+			</a>
 		</header>
 	);
 }
