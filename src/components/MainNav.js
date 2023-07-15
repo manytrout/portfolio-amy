@@ -6,9 +6,10 @@ function MainNav() {
 				<li>
 					<NavLink to="/">Home</NavLink>
 				</li>
-				<li>
+				{/* TO DO: add more links once I have HashLink working */}
+				{/* <li>
 					<NavLink to="/about">About</NavLink>
-				</li>
+				</li> */}
 			</ul>
 		</nav>
 	);
