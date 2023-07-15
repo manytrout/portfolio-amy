@@ -263,31 +263,43 @@ const posts = [
 		),
 		details: (
 			<div className="details">
-				<h3 className="projectOverview">Overview</h3>
-				<p className="planning">
-					break this up into stages? Working in a group of four to
-					deliver several business requirements needed a lot of
-					planning before we started working on anything remotely
-					technical. Our first meeting happened before the project
-					officially started, that's when agreed on some basics about
-					how we'd keep one another on track. Once we started
-					officially, we started using a shared Google Drive to
-					collaborate on documents, share resources, and store assets.
-					Next up we chose a communication platform -- we thought that
-					Discord would be best since it's flexible and there is no
-					license expiry to worry about. We used Figma to design the
-					Information Architecture and Invision to do up some detailed
-					wireframes; they're both so easy to use when collaborating
-					remotely. We also used GitHub and an FTP client to share our
-					code.
-				</p>
-				<p className="working">
-					{" "}
-					break this up into stages: WP plugins, Templates and
-					verification of templates, test content, adding JS
-					functionality to the gallery page, styling, etc.{" "}
-				</p>
-				<p className="challenges"></p>
+				<div className="Section1">
+					<h3 className="projectOverview">Overview</h3>
+					<p className="planning">
+						We worked in a group of four to deliver several business
+						requirements, so we needed to do a lot of planning
+						before we started working on anything remotely
+						technical. Our first meeting happened before the project
+						officially started, that's when agreed on some basics
+						about how we'd keep one another on track. Once we
+						started officially, we started using a shared Google
+						Drive to collaborate on documents, share resources, and
+						store assets. Next up we chose a communication platform
+						-- we thought that Discord would be best since it's
+						flexible and there is no license expiry to worry about.
+						We used Figma to design the Information Architecture and
+						Invision to do up some detailed wireframes; they're both
+						so easy to use when collaborating remotely. We also used
+						GitHub and an FTP client to share our code.
+					</p>
+					<h4 className="working">Working</h4>
+					<p className="working">
+						We started with the functional website part, to make
+						sure all of the plumbing was done and had {"("}most{")"}{" "}
+						of the classes in place. Next up was the styling
+					</p>
+				</div>
+				<h3>Challenges</h3>
+				<div className="section1">
+					<h4>Challenge 1</h4>
+					<p className="challenges">
+						Some more details should go here
+					</p>
+					<h4>Challenge 2</h4>
+					<p className="challenges">
+						And more here. I'll populate this more once we're done the capstone {";)"}
+					</p>
+				</div>
 			</div>
 		),
 		titleImage: project_titleImage,
@@ -299,24 +311,30 @@ const posts = [
 		title: "My Portfolio",
 		body: (
 			<div className="summary">
-				<p>This is where I plan to keep track of what I learn</p>
+				<p>This started as a project but I'll keep using it</p>
 			</div>
 		),
 		details: (
 			<div className="details">
-				<h3 className="projectOverview">Overview</h3>
-				<p className="planning">
-					Lots of winging it! I wanted to spend more time using React
+				<h4>Overview</h4>
+
+				<p className="Overview">
+					Lots of winging it! At first anyway. I wanted to spend more time using React
 					so that's what I decided right off the bat. I decided to
 					keep using Create React App because I had used it before, so
 					I knew what to expect. My vision for this page is pretty
-					different from how it looks now.
+					different from how it looks now but I'm ok with that.
 				</p>
 				<div className="section1">
-					<p className="working"></p>
+					<h3>Planning</h3>
+					<p className="working">Starting with React takes away the "I don't even know where to start" challenge that I often hit. First real stuff I added was actually the skeleton of my writeups because JS makes that pretty fun! I made a big array with project objects, and I could structure it however I wanted, and made a function to return the array as needed. Then all I had to do was just add/remove things from the components. It's neat to see how it all flows!</p>
 				</div>
 				<div className="section1">
-					<p className="challenges"></p>
+					<h3>Challenges</h3>
+					<h4>Styling</h4>
+					<p className="challenges">CSS is so hard! I didn't get as much fancy stuff done as I thought, and realized that I really prefer <strong>not-hamburgers</strong> for navigation</p>
+					<h4>React functionality</h4>
+					<p className="challenges">Seriously, why is there no built-in anchor linking!!</p>
 				</div>
 			</div>
 		),

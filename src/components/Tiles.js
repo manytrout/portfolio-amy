@@ -2,8 +2,7 @@ import getPosts from "../data/projectData";
 import Tile from "./Tile";
 
 function Tiles() {
-	// accordion from https://dev.to/sababg/css-only-accordion-59db
-	// TO DO: ask about accessibility suggestions
+
 	let posts = getPosts();
 
 
@@ -18,6 +17,9 @@ function Tiles() {
 }
 
 export default Tiles;
+// // TO DO: add accordion functionality back in once I figure out accessibiliy considerations
+
+// // accordion from https://dev.to/sababg/css-only-accordion-59db
 
 // 	let assignments = posts.filter((post) => {
 // 	return post.projectType === "assignment";
