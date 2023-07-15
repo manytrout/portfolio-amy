@@ -129,11 +129,11 @@ main {
 	box-shadow: 5px 4px 0px 0px rgba(0, 0, 0, 1);
 	max-width: 80rem;
 	@media (min-width: media.$breakpoint-small) {
-		width: 70%;
+		width: 80%;
 		margin: 0 auto;
 	}
 	@media (min-width: media.$breakpoint-medium) {
-		width: 80%;
+		width: 93%;
 		margin: 0 auto;
 	}
 }
@@ -307,11 +307,11 @@ main {
 		box-shadow: 5px 4px 0px 0px rgba(0, 0, 0, 1);
 		max-width: 80rem;
 		@media (min-width: media.$breakpoint-small) {
-			width: 70%;
+			width: 80%;
 			margin: 0 auto;
 		}
 		@media (min-width: media.$breakpoint-medium) {
-			width: 80%;
+			width: 93%;
 			max-width: 90rem;
 			margin: 0 auto;
 		}
