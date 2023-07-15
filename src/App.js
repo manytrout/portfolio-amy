@@ -27,8 +27,8 @@ function App() {
 					<MainNav />
 					<Footer
 						myName="Amy Turton"
-						email="real@email.com"
-						details="some stuff"
+						email="aturton1@my.bcit.ca"
+						details="2023"
 					/>
 
 					<ScrollToTop />

@@ -1,10 +1,13 @@
 function Footer(props) {
+	let copyright = "\u00A9";
 	return (
 		<footer className="pageFooter">
 			<ul className="pageUL">
 				<li>{props.myName}</li>
+				<li>
+					{copyright} {props.details}
+				</li>
 				<li>{props.email}</li>
-				<li>{props.details}</li>
 			</ul>
 		</footer>
 	);

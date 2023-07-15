@@ -2,7 +2,6 @@
 @use "./typography" as typog;
 @use "./variables" as variables;
 
-
 code {
 	font-family: "Courier Prime", "Courier New", monospace;
 	border: 1px solid transparent;
@@ -101,17 +100,14 @@ main {
 	padding-left: 3rem;
 	margin: 0 auto;
 	@media (min-width: media.$breakpoint-medium) {
-		width: 90%
-
+		width: 90%;
 	}
 	@media (min-width: media.$breakpoint-large) {
 		// width: calc(90% - 20rem);
 		width: 85%;
-
 	}
 	@media (min-width: media.$breakpoint-large) {
 		max-width: 80rem;
-
 	}
 }
 
@@ -121,7 +117,7 @@ main {
 	width: 100%;
 	padding: 0 1rem;
 }
-.aboutMe{
+.aboutMe {
 	padding: 1rem;
 	margin-top: 1rem;
 	margin-right: 2rem;
@@ -156,7 +152,7 @@ main {
 		position: relative;
 		bottom: 4rem;
 		left: 0rem;
-		animation: .9s linear infinite arrow-down;
+		animation: 0.9s linear infinite arrow-down;
 	}
 	@keyframes arrow-down {
 		from {
@@ -164,7 +160,6 @@ main {
 			fill: variables.$tealMedium;
 		}
 		to {
-			
 			transform: translateY(6rem);
 			fill: transparent;
 		}
@@ -235,7 +230,7 @@ main {
 		.buttonContainer {
 			display: flex;
 			justify-content: center;
-			button{
+			button {
 				width: 100%;
 			}
 		}
@@ -243,7 +238,7 @@ main {
 			background-color: variables.$blueGreyOpaqueDarker;
 		}
 	}
-	.singleTile:hover, 
+	.singleTile:hover,
 	.singleTile:focus {
 		transform: scale(1.02);
 		transition: transform 0.2s ease;
@@ -325,24 +320,34 @@ main {
 		// width: 99%;
 		margin: 0 1rem;
 	}
-	.snapshotContainer{
+	.snapshotContainer {
 		display: flex;
 		justify-content: center;
-	.projectSnapshot {
-		// make this better
-		width: calc(49% - 2rem);
-		padding: 1rem;
-	}}
+		.projectSnapshot {
+			// make this better
+			width: calc(49% - 2rem);
+			padding: 1rem;
+		}
+	}
 	.section1 {
 		background-color: variables.$greyAlmostTransparent;
 		padding: 1rem;
 	}
 }
 .singleTile {
-	margin: 1rem;
+	margin: 0 auto;
 	display: inline-block;
 	h2 {
 		margin-left: 1rem;
+	}
+	@media (min-width: media.$breakpoint-small) {
+		width: 80%;
+		margin: 0 auto;
+	}
+	@media (min-width: media.$breakpoint-medium) {
+		width: 93%;
+		max-width: 90rem;
+		margin: 0 auto;
 	}
 }
 
@@ -358,22 +363,25 @@ main {
 	height: 2.5rem;
 	position: fixed;
 	bottom: 0px;
-	background-color: variables.$blueGreySlightlyTransparent;
+	background-color: variables.$blueGreyOpaque;
 	z-index: 1000;
 	ul {
 		display: flex;
 		justify-content: space-around;
 	}
 	@media (min-width: media.$breakpoint-medium) {
-		background-color: transparent;
+		// background-color: transparent;
 		padding: 2rem 3rem 2rem 1rem;
 		width: 1rem;
 		writing-mode: vertical-lr;
 		height: -moz-fit-content;
-		height: calc(60% - 20px );
+		height: calc(60% - 20px);
 
 		// TO DO: check if this is what i want when i add more  items to menu
-		a :hover, 
+		// :hover {
+		// 	background-color: variables.$blueGreySlightlyTransparent;
+		// }
+		a :hover,
 		a :focus {
 			transform: scale(1.02);
 			transition: transform 0.2s ease;
