@@ -161,7 +161,7 @@ main {
 	@keyframes arrow-down {
 		from {
 			transform: translateY(4rem);
-			fill: variables.$tealBright;
+			fill: variables.$tealMedium;
 		}
 		to {
 			
@@ -243,13 +243,12 @@ main {
 			background-color: variables.$blueGreyOpaqueDarker;
 		}
 	}
-	.singleTile:hover {
+	.singleTile:hover, 
+	.singleTile:focus {
 		transform: scale(1.02);
 		transition: transform 0.2s ease;
 		button {
-			// background-color: variables.$pinkLight;
 			background-color: variables.$tealBright;
-			// background-color:#8cd2cd ;
 			color: variables.$tealMedium;
 			transform: scale(1.2);
 			transition: transform 0.2s ease;
@@ -359,16 +358,23 @@ main {
 	height: 2.5rem;
 	position: fixed;
 	bottom: 0px;
-	background-color: variables.$blueGreyOpaqueDarker;
+	background-color: variables.$blueGreySlightlyTransparent;
 	z-index: 1000;
+	ul {
+		display: flex;
+		justify-content: space-around;
+	}
 	@media (min-width: media.$breakpoint-medium) {
+		background-color: transparent;
 		padding: 2rem 3rem 2rem 1rem;
 		width: 1rem;
 		writing-mode: vertical-lr;
 		height: -moz-fit-content;
-		height: fit-content;
+		height: calc(60% - 20px );
+
 		// TO DO: check if this is what i want when i add more  items to menu
-		:hover {
+		a :hover, 
+		a :focus {
 			transform: scale(1.02);
 			transition: transform 0.2s ease;
 			a {
