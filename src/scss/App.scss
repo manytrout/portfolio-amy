@@ -94,7 +94,6 @@ body {
 	padding: 1rem 0rem;
 }
 main {
-	// width: calc(100% - 2rem);
 	width: 100%;
 	padding: 0;
 	padding-left: 3rem;
@@ -168,7 +167,7 @@ main {
 .buttonContainer {
 	position: relative;
 	top: 0;
-	margin: 1rem auto;
+	margin: 1rem;
 
 	button {
 		font-size: typog.$textSize;
@@ -178,9 +177,9 @@ main {
 		height: 4rem;
 		// padding: 0.3rem 4rem;
 		border: 1px solid transparent;
-		border-radius: 6px;
+		border-radius: 3px;
 		// margin: 0.5rem; // do not add this back it's really annoying to debug
-		// border: 1px solid transparent;
+		border: 1px solid transparent;
 		background-color: variables.$tealMedium;
 		color: variables.$tealBright;
 		cursor: pointer;
@@ -231,7 +230,7 @@ main {
 			display: flex;
 			justify-content: center;
 			button {
-				width: 100%;
+				width: 90%;
 			}
 		}
 		.projectText {
