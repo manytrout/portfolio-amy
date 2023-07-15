@@ -15,23 +15,23 @@ function App() {
 	return (
 		<div className="App">
 			<BrowserRouter basename={`/${APP_FOLDER_NAME}`}>
-					<Header title="Amy Turton" />
-					{/* DONE: add a check on slugs so that page not found works as it should
+				<Header title="Amy Turton" />
+				{/* DONE: add a check on slugs so that page not found works as it should
 					TO DO: add hash link so it can be parallax */}
-					{/* <Route path="/about" element={<About />} /> */}
-					<Routes>
-						<Route path="/" element={<PageHome />} />
-						<Route path="/:slug" element={<PageProject />} />
-					</Routes>
+				{/* <Route path="/about" element={<About />} /> */}
+				<Routes>
+					<Route path="/" element={<PageHome />} />
+					<Route path="/:slug" element={<PageProject />} />
+				</Routes>
 
-					<MainNav />
-					<Footer
-						myName="Amy Turton"
-						email="aturton1@my.bcit.ca"
-						details="2023"
-					/>
+				<MainNav />
+				<Footer
+					myName="Amy Turton"
+					email="mailto:aturton1@my.bcit.ca"
+					details="2023"
+				/>
 
-					<ScrollToTop />
+				<ScrollToTop />
 			</BrowserRouter>
 		</div>
 	);
