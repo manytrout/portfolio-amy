@@ -27,7 +27,7 @@ function App() {
 				<MainNav />
 				<Footer
 					myName="Amy Turton"
-					email="mailto:aturton1@my.bcit.ca"
+					email="aturton1@my.bcit.ca"
 					details="2023"
 				/>
 

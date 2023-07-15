@@ -7,7 +7,9 @@ function Footer(props) {
 				<li>
 					{copyright} {props.details}
 				</li>
-				<li>{props.email}</li>
+				<li>
+					<a href={`mailto:${props.email}`}>{props.email}</a>
+				</li>
 			</ul>
 		</footer>
 	);
